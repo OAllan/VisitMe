@@ -7,5 +7,6 @@ target 'VisitMe' do
 
   # Pods for VisitMe
   pod 'BarcodeScanner'
+  pod 'QRCode'
 
 end
