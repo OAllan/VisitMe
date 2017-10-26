@@ -75,11 +75,13 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
             switch tipo!{
             case "Vigilante":
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "vigilante") as! VigilanteController
-                newViewController.loadViewIfNeeded()
-                newViewController.vigilante = ViewController.dbManager.cargarVigilante(email: correoTf.text!)
-                newViewController.cargarInformacion(email: correoTf.text!)
-                self.present(newViewController, animated: true, completion: nil)
+                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+                tabViewController.loadViewIfNeeded()
+                let vigilanteViewController = storyBoard.instantiateViewController(withIdentifier: "vigilante") as! VigilanteController
+                vigilanteViewController.loadViewIfNeeded()
+                vigilanteViewController.vigilante = ViewController.dbManager.cargarVigilante(email: correoTf.text!)
+                vigilanteViewController.cargarInformacion(email: correoTf.text!)
+                self.present(tabViewController, animated: true, completion: nil)
             default:
                 break
             }

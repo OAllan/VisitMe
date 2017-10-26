@@ -10,6 +10,7 @@
 		74A3B8A6A24D6072C2383B12 /* Pods_VisitMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */; };
 		E3219A0B1FA1C9BF00E555F0 /* VigilanteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */; };
 		E3219A0D1FA1DB6200E555F0 /* ResidenteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */; };
+		E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3219A0E1FA22B3700E555F0 /* QRScannerController.swift */; };
 		E37030B21FA0E9340067552D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37030B11FA0E9340067552D /* DBManager.swift */; };
 		E370826F1FA191990018CA15 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826C1FA191990018CA15 /* Usuario.swift */; };
 		E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826D1FA191990018CA15 /* CondoUsuario.swift */; };
@@ -29,6 +30,7 @@
 		7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigilanteController.swift; sourceTree = "<group>"; };
 		E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidenteController.swift; sourceTree = "<group>"; };
+		E3219A0E1FA22B3700E555F0 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		E37030B11FA0E9340067552D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E370826C1FA191990018CA15 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E370826D1FA191990018CA15 /* CondoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUsuario.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */,
 				E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */,
 				E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */,
+				E3219A0E1FA22B3700E555F0 /* QRScannerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
+				E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
 				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
 				E3219A0B1FA1C9BF00E555F0 /* VigilanteController.swift in Sources */,

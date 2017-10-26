@@ -9,42 +9,23 @@
 import UIKit
 import BarcodeScanner
 
-class VigilanteController: UIViewController, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate{
+class VigilanteController: UIViewController {
     
     @IBOutlet weak var nombreLabel: UILabel!
     @IBOutlet weak var apellidoTf: UILabel!
     @IBOutlet weak var email: UILabel!
     
-    let controller = BarcodeScannerController()
     var vigilante: Vigilante? = nil
     
-    @IBAction func escanearCodigo(_ sender: Any) {
-        controller.reset()
-        present(controller, animated: true, completion: nil)
-    }
     
-    func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        buscarInvitacion()
-    }
     
-    func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
-        print(error)
-    }
-    
-    func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.codeDelegate = self
-        controller.errorDelegate = self
-        controller.dismissalDelegate = self
-    }
-    
-    func buscarInvitacion(){
         
     }
+    
+    
     
     func cargarInformacion(email: String){
         nombreLabel.text = vigilante?.nombre
