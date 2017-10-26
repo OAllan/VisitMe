@@ -10,23 +10,25 @@ import Foundation
 
 class Usuario {
     
-    var idUsuario: String?
-    var nombres: String?
+    var id: String?
+    var nombre: String?
     var apellidoPaterno: String?
     var apellidoMaterno: String?
+    var email: String?
     
-    init(idUsuario: String, nombres: String, apellidoPaterno: String, apellidoMaterno: String) {
-        self.idUsuario = idUsuario
-        self.nombres = nombres
+    init(id: String, nombre: String, apellidoPaterno: String, apellidoMaterno: String, email: String) {
+        self.id = id
+        self.nombre = nombre
         self.apellidoPaterno = apellidoPaterno
         self.apellidoMaterno = apellidoMaterno
+        self.email = email
         
-        func getIdUsuario() ->{
-            return self.idUsuario!
+        func getId() -> String{
+            return self.id!
         }
         
-        func getNombres() -> String{
-            return self.nombres!
+        func getNombre() -> String{
+            return self.nombre!
         }
         
         func getApellidoPaterno() -> String {
@@ -37,12 +39,16 @@ class Usuario {
             return self.apellidoMaterno!
         }
         
-        func setIdUsuario(idUsuario: String){
-            self.idUsuario = idUsuario
+        func getEmail() -> String {
+            return self.email!
         }
         
-        func setNombres(nombres: String){
-            self.nombres = nombres
+        func setId(id: String){
+            self.id = id
+        }
+        
+        func setNombre(nombre: String){
+            self.nombre = nombre
         }
         
         func setApellidoPaterno(apellidoPaterno: String){
@@ -53,6 +59,9 @@ class Usuario {
             self.apellidoMaterno = apellidoMaterno
         }
         
+        func setEmail(email: String){
+            self.email = email
+        }
         
     }
     
