@@ -15,12 +15,14 @@ class Vigilante{
     var nombre: String?
     var apellidoPaterno: String?
     var apellidoMaterno: String?
+    var email: String?
     
-    init(id: String, nombre:String, apellidoPaterno:String, apellidoMaterno:String){
+    init(id: String, nombre:String, apellidoPaterno:String, apellidoMaterno:String, email: String){
         self.id = id
         self.nombre = nombre
         self.apellidoPaterno = apellidoPaterno
         self.apellidoMaterno = apellidoMaterno
+        self.email = email
         
         func getId() -> String{
             return self.id!
@@ -39,6 +41,10 @@ class Vigilante{
             
         }
         
+        func getEmail() -> String{
+            return self.email!
+        }
+        
         func setId(id: String){
             self.id = id
         }
@@ -55,6 +61,9 @@ class Vigilante{
             self.apellidoMaterno = apellidoMaterno
         }
         
+        func setEmail(email: String){
+            self.email = email
+        }
         
     }
     

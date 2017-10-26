@@ -82,6 +82,17 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 vigilanteViewController.vigilante = ViewController.dbManager.cargarVigilante(email: correoTf.text!)
                 vigilanteViewController.cargarInformacion(email: correoTf.text!)
                 self.present(tabViewController, animated: true, completion: nil)
+            case "Residente":
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+                tabViewController.loadViewIfNeeded()
+                let residenteViewController = storyBoard.instantiateViewController(withIdentifier: "residente") as! ResidenteController
+                residenteViewController.loadViewIfNeeded()
+                residenteViewController.residente = ViewController.dbManager.cargarResidente(email: correoTf.text!)
+                residenteViewController.cargarInformacion(email: correoTf.text!)
+                self.present(tabViewController, animated: true, completion: nil)
+            case "Admnistrador":
+                print(".")
             default:
                 break
             }

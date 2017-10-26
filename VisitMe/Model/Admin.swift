@@ -1,13 +1,14 @@
 //
-//  Usuario.swift
+//  Admin.swift
 //  VisitMe
 //
-//  Created by Aldo Alberto Aguilar Bermúdez on 23/10/17.
+//  Created by Aldo on 10/26/17.
 //  Copyright © 2017 Oscar Allan Ruiz Toledo . All rights reserved.
 //
+
 import Foundation
 
-class Usuario {
+class Admin{
     
     var id: String?
     var nombre: String?
@@ -15,7 +16,7 @@ class Usuario {
     var apellidoMaterno: String?
     var email: String?
     
-    init(id: String, nombre: String, apellidoPaterno: String, apellidoMaterno: String, email: String) {
+    init(id: String, nombre:String, apellidoPaterno:String, apellidoMaterno:String, email: String){
         self.id = id
         self.nombre = nombre
         self.apellidoPaterno = apellidoPaterno
@@ -30,15 +31,16 @@ class Usuario {
             return self.nombre!
         }
         
-        func getApellidoPaterno() -> String {
+        func getApellidoPaterno() -> String{
             return self.apellidoPaterno!
         }
         
-        func getApellidoMaterno() -> String {
-            return self.apellidoMaterno!
+        func getApellidoMaterno() -> String{
+            return self.apellidoPaterno!
+            
         }
         
-        func getEmail() -> String {
+        func getEmail() -> String{
             return self.email!
         }
         

@@ -80,6 +80,36 @@ class DBManager{
         
     }
     
+    func registrarResidente(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
+        let sqlInserta = "INSERT INTO USER (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
+            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
+            print("Datos registrados")
+        }
+        else{
+            sqlite3_close(baseDatos)
+            let msg = String.init(cString: error!)
+            print("Error: \(msg)")
+        }
+        
+    }
+    
+    func registrarAdmin(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
+        let sqlInserta = "INSERT INTO ADMIN (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
+            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
+            print("Datos registrados")
+        }
+        else{
+            sqlite3_close(baseDatos)
+            let msg = String.init(cString: error!)
+            print("Error: \(msg)")
+        }
+        
+    }
+    
     func cargarVigilante(email: String) -> Vigilante? {
         let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM VIGILANTE WHERE EMAIL = '\(email)'"
         var declaracion: OpaquePointer? = nil
@@ -89,7 +119,37 @@ class DBManager{
                 let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
                 let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
                 let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
-                return Vigilante(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno)
+                return Vigilante(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
+            }
+        }
+        return nil
+    }
+    
+    func cargarResidente(email: String) -> Usuario? {
+        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM USER WHERE EMAIL = '\(email)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
+                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
+                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
+                return Usuario(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
+            }
+        }
+        return nil
+    }
+    
+    func cargarAdmin(email: String) -> Admin? {
+        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM ADMIN WHERE EMAIL = '\(email)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
+                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
+                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
+                return Admin(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
             }
         }
         return nil

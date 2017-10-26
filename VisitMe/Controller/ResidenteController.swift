@@ -10,7 +10,7 @@ import UIKit
 
 class ResidenteController: UIViewController{
     
-    
+    var residente: Usuario? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,9 @@ class ResidenteController: UIViewController{
     }
     
     func cargarInformacion(email: String){
-        
+        /*nombreLabel.text = residente?.nombre
+        apellidoTf.text = "\(String(describing: residente?.apellidoPaterno)) \(String(describing: residente?.apellidoMaterno))"
+        self.email.text = email*/
     }
     
     override func didReceiveMemoryWarning() {
