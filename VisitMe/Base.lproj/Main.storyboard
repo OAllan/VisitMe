@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -53,6 +53,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="UWc-qo-tOp" kind="show" id="VgQ-BQ-iX5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -209,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bi-2T-Sh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="72"/>
+            <point key="canvasLocation" x="2068" y="-697"/>
         </scene>
         <!--Escanear Código-->
         <scene sceneID="iiu-Xs-w9V">
@@ -564,28 +567,14 @@
             </objects>
             <point key="canvasLocation" x="937" y="860"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrar Condominio -->
         <scene sceneID="U9r-Kq-qq3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uoQ-mR-5Er" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pKG-kN-xpD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h1a-TG-ubT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Now-4n-0yT">
-                                <rect key="frame" x="16" y="56" width="343" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Registrar Condominio ">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="ChalkboardSE-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipd-pX-nM8">
                                 <rect key="frame" x="16" y="115" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -674,6 +663,9 @@
                                 <rect key="frame" x="145" y="595" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aceptar"/>
+                                <connections>
+                                    <segue destination="Ttr-Qb-j2Y" kind="show" id="x2H-jC-pPG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mail de Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCQ-3h-MQH">
                                 <rect key="frame" x="16" y="456" width="108" height="21"/>
@@ -693,9 +685,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="pSk-7o-p5f"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Registrar Condominio " id="TKY-Dm-bjh">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="abf-6O-GqK">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="Ff1-l5-Iyy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoQ-mR-5Er" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1720.8" y="855.9220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0hz-lo-YDD">
+            <objects>
+                <navigationController id="UWc-qo-tOp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uju-sg-dFD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pKG-kN-xpD" kind="relationship" relationship="rootViewController" id="RnN-Ke-Nbo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjG-qI-8XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721" y="116"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WBR-Ud-k1v">
@@ -750,6 +767,9 @@
                                 <rect key="frame" x="120" y="498" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aceptar"/>
+                                <connections>
+                                    <segue destination="q2n-R6-zLj" kind="show" id="4hx-pl-tLW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apellido P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwy-1G-smw">
                                 <rect key="frame" x="16" y="234" width="77" height="21"/>
@@ -810,19 +830,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-r9-yq6">
-                                <rect key="frame" x="16" y="39" width="343" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Registrar Residente ">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="ChalkboardSE-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNa-PP-ou2">
                                 <rect key="frame" x="16" y="131" width="62" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -898,6 +905,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-r9-yq6">
+                                <rect key="frame" x="19" y="64" width="343" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Registrar Residente ">
+                                        <attributes>
+                                            <font key="NSFont" size="25" name="ChalkboardSE-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="7yj-NU-sV8"/>
@@ -983,6 +1003,6 @@
         <image name="visitme" width="1280" height="351"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pzj-Nc-cZo"/>
+        <segue reference="Ff1-l5-Iyy"/>
     </inferredMetricsTieBreakers>
 </document>
