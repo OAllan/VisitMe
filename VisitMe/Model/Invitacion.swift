@@ -21,8 +21,8 @@ class Invitacion{
     init(folio: String, idUsuario: String, nombres: String, apellidoPaterno: String, apellidoMaterno: String,
     placas: String, horaEntrada: Date, horaSalida: Date, fechaValida: Date, esExpirada: Bool, email: String){
         self.folio = folio
-        self. idUsuario = idUsuario
-        self. nombres = nombres
+        self.idUsuario = idUsuario
+        self.nombres = nombres
         self.apellidoPaterno = apellidoPaterno
         self.apellidoMaterno = apellidoMaterno
         self.placas = placas
@@ -48,7 +48,7 @@ class Invitacion{
     }
 
     func getApellidoPaterno() -> String{
-        return self.apellidoPaterno
+        return self.apellidoPaterno!
     }
 
     func getApellidoMaterno() -> String{
