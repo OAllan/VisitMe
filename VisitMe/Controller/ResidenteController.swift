@@ -10,21 +10,23 @@ import UIKit
 
 class ResidenteController: UIViewController{
     
+    @IBOutlet weak var nombreLabel: UILabel!
     var residente: Usuario? = nil
+    
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var apellidoTf: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    func buscarInvitacion(){
-        
-    }
+    
     
     func cargarInformacion(email: String){
-        /*nombreLabel.text = residente?.nombre
-        apellidoTf.text = "\(String(describing: residente?.apellidoPaterno)) \(String(describing: residente?.apellidoMaterno))"
-        self.email.text = email*/
+        nombreLabel.text = residente?.nombre
+        apellidoTf.text = "\(residente!.apellidoPaterno!) \(residente!.apellidoMaterno!)"
+        self.email.text = email
     }
     
     override func didReceiveMemoryWarning() {

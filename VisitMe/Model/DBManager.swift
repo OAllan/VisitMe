@@ -34,7 +34,7 @@ class DBManager{
         let sqlCreaTablaAdmin = "CREATE TABLE IF NOT EXISTS ADMIN" +
              "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
         
-        let sqlCreaTablaUser = "CREATE TABLE IF NOT EXISTS USER" +
+        let sqlCreaTablaUser = "CREATE TABLE IF NOT EXISTS RESIDENTE" +
         "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
         
         let sqlCreaTablaVigilante = "CREATE TABLE IF NOT EXISTS VIGILANTE" +
@@ -50,7 +50,7 @@ class DBManager{
         "(CONDOMINIO INTEGER, USUARIO INTEGER, PRIMARY KEY(CONDOMINIO, USUARIO), FOREIGN KEY(CONDOMINIO) REFERENCES CONDOMINIO(ID),FOREIGN KEY(USUARIO) REFERENCES USER(ID))"
         
         let sqlCreaTablaInvitacion = "CREATE TABLE IF NOT EXISTS INVITACION" +
-        "(CODIGO VARCHAR(30) PRIMARY KEY, USUARIO INTEGER, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), PLACAS VARCHAR(8), HORA_ENTRADA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, HORA_SALIDA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, EXPIRADA CHAR(1), EMAIL VARCHAR(255), FOREIGN KEY (USUARIO) REFERENCES USER(ID))"
+        "(CODIGO VARCHAR(30) PRIMARY KEY, USUARIO INTEGER, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), PLACAS VARCHAR(8), HORA_ENTRADA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, HORA_SALIDA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, EXPIRADA CHAR(1), EMAIL VARCHAR(255), FECHA_VISITA DATE, FOREIGN KEY (USUARIO) REFERENCES USER(ID))"
         
         let sqlCreaTabla = "\(sqlCreaTablaAdmin);\(sqlCreaTablaUser);\(sqlCreaTablaVigilante);\(sqlCreaTablaCondominio);\(sqlCreaTablaCondominioVigilante);\(sqlCreaTablaCondominioUsuario);\(sqlCreaTablaInvitacion);"
         
@@ -81,7 +81,7 @@ class DBManager{
     }
     
     func registrarResidente(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
-        let sqlInserta = "INSERT INTO USER (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
+        let sqlInserta = "INSERT INTO RESIDENTE (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
             + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
@@ -126,7 +126,7 @@ class DBManager{
     }
     
     func cargarResidente(email: String) -> Usuario? {
-        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM USER WHERE EMAIL = '\(email)'"
+        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM RESIDENTE WHERE EMAIL = '\(email)'"
         var declaracion: OpaquePointer? = nil
         if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
             while sqlite3_step(declaracion) == SQLITE_ROW {
@@ -155,7 +155,7 @@ class DBManager{
         return nil
     }
     
-    func compararPassword(email: String, password: String, tabla: String)->Bool{
+    func compararPassword(email: String, password: String, tabla: String) ->Bool {
         let sqlConsulta = "SELECT PASSWORD FROM \(tabla) WHERE EMAIL = '\(email)'"
         var declaracion: OpaquePointer? = nil
         if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
@@ -168,5 +168,34 @@ class DBManager{
             }
         }
         return false;
+    }
+    
+    func buscarCodigo(codigo: String) -> Invitacion? {
+        let sqlConsulta = "SELECT * FROM INVITACION WHERE CODIGO = '\(codigo)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let usuario = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let nombre = String.init(cString: sqlite3_column_text(declaracion, 2))
+                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
+                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 4))
+                let placas = String.init(cString: sqlite3_column_text(declaracion, 5))
+                let horaEntrada = String.init(cString: sqlite3_column_text(declaracion, 6))
+                let horaSalida = String.init(cString: sqlite3_column_text(declaracion, 7))
+                let expirada = String.init(cString: sqlite3_column_text(declaracion, 8))
+                let email = String.init(cString: sqlite3_column_text(declaracion, 9))
+                let fecha = String.init(cString: sqlite3_column_text(declaracion, 2))
+                
+                return Invitacion(folio: codigo, idUsuario: usuario, nombres: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, placas: placas, horaEntrada: horaEntrada, horaSalida: horaSalida, fechaValida: fecha, esExpirada: expirada == "1", email: email)
+                
+            }
+        }
+        return nil;
+    }
+    
+    func close(){
+        if baseDatos != nil{
+            sqlite3_close(baseDatos)
+        }
     }
 }

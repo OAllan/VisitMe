@@ -10,16 +10,16 @@ class Invitacion{
     var apellidoPaterno: String?
     var apellidoMaterno: String?
     var placas: String?
-    var horaEntrada: Date?
-    var horaSalida: Date?
-    var fechaValida: Date?
+    var horaEntrada: String?
+    var horaSalida: String?
+    var fechaValida: String?
     var esExpirada: Bool?
     var email: String?
 
     //Constructor
 
     init(folio: String, idUsuario: String, nombres: String, apellidoPaterno: String, apellidoMaterno: String,
-    placas: String, horaEntrada: Date, horaSalida: Date, fechaValida: Date, esExpirada: Bool, email: String){
+    placas: String, horaEntrada: String, horaSalida: String, fechaValida: String, esExpirada: Bool, email: String){
         self.folio = folio
         self.idUsuario = idUsuario
         self.nombres = nombres
@@ -59,15 +59,15 @@ class Invitacion{
         return self.placas!
     }
 
-    func getHoraEntrada() -> Date{
+    func getHoraEntrada() -> String{
         return self.horaEntrada!
     }
 
-    func getHoraSalida() -> Date{
+    func getHoraSalida() -> String{
         return self.horaSalida!
     }
 
-    func getFechaValida() -> Date{
+    func getFechaValida() -> String{
         return self.fechaValida!
     }
 
@@ -105,15 +105,15 @@ class Invitacion{
         self.placas = placas
     }
 
-    func setHoraEntrada(horaEntrada: Date){
+    func setHoraEntrada(horaEntrada: String){
         self.horaEntrada = horaEntrada
     }
 
-    func setHoraSalida(horaSalida: Date){
+    func setHoraSalida(horaSalida: String){
         self.horaSalida = horaSalida
     }
 
-    func setFechaValida(fechaValida: Date){
+    func setFechaValida(fechaValida: String){
         self.fechaValida = fechaValida
     }
 

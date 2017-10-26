@@ -10,12 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    static var dbManager = DBManager()
+    static var dbManager : DBManager? = AppDelegate.dbManager
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        ViewController.dbManager.abrirBaseDeDatos()
-        
         
     }
 

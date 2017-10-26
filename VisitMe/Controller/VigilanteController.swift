@@ -29,7 +29,7 @@ class VigilanteController: UIViewController {
     
     func cargarInformacion(email: String){
         nombreLabel.text = vigilante?.nombre
-        apellidoTf.text = "\(String(describing: vigilante?.apellidoPaterno)) \(String(describing: vigilante?.apellidoMaterno))"
+        apellidoTf.text = "\(vigilante!.apellidoPaterno!) \(vigilante!.apellidoMaterno!)"
         self.email.text = email
     }
     

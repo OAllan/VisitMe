@@ -12,7 +12,7 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var contraTf: UITextField!
     @IBOutlet weak var correoTf: UITextField!
-    var keyboardHeight: CGFloat = 258
+    let keyboardHeight: CGFloat = 200
     var tipo: String? = "Residente"
     let tipoUsuarios = ["Residente", "Vigilante" ,"Administrador"]
     
@@ -38,6 +38,7 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         contraTf.delegate = self
         correoTf.delegate = self
+        ViewController.dbManager?.registrarResidente(nombre: "Aldo", apellidoPaterno: "Aguilar", apellidoMaterno: "Bermudez", password: "test", email: "aldo@mail.com")
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,24 +72,25 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func iniciarSesion(_ sender: Any) {
-        if ViewController.dbManager.compararPassword(email: correoTf.text!, password: contraTf.text!, tabla: (tipo?.uppercased())!){
+        if ViewController.dbManager!.compararPassword(email: correoTf.text!, password: contraTf.text!, tabla: (tipo?.uppercased())!){
             switch tipo!{
             case "Vigilante":
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
                 tabViewController.loadViewIfNeeded()
-                let vigilanteViewController = storyBoard.instantiateViewController(withIdentifier: "vigilante") as! VigilanteController
+                
+                let vigilanteViewController = tabViewController.childViewControllers[0] as! VigilanteController
                 vigilanteViewController.loadViewIfNeeded()
-                vigilanteViewController.vigilante = ViewController.dbManager.cargarVigilante(email: correoTf.text!)
+                vigilanteViewController.vigilante = ViewController.dbManager?.cargarVigilante(email: correoTf.text!)
                 vigilanteViewController.cargarInformacion(email: correoTf.text!)
                 self.present(tabViewController, animated: true, completion: nil)
             case "Residente":
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabResidenteController") as! UITabBarController
                 tabViewController.loadViewIfNeeded()
-                let residenteViewController = storyBoard.instantiateViewController(withIdentifier: "residente") as! ResidenteController
+                let residenteViewController = tabViewController.childViewControllers[0] as! ResidenteController
                 residenteViewController.loadViewIfNeeded()
-                residenteViewController.residente = ViewController.dbManager.cargarResidente(email: correoTf.text!)
+                residenteViewController.residente = ViewController.dbManager?.cargarResidente(email: correoTf.text!)
                 residenteViewController.cargarInformacion(email: correoTf.text!)
                 self.present(tabViewController, animated: true, completion: nil)
             case "Admnistrador":

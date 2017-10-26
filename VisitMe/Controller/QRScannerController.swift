@@ -15,10 +15,11 @@ class QRScannerController: BarcodeScannerController, BarcodeScannerCodeDelegate,
         self.codeDelegate = self
         self.errorDelegate = self
         self.dismissalDelegate = self
+        
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        buscarInvitacion()
+        buscarInvitacion(code: code)
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
@@ -29,7 +30,9 @@ class QRScannerController: BarcodeScannerController, BarcodeScannerCodeDelegate,
         controller.dismiss(animated: true, completion: nil)
     }
     
-    func buscarInvitacion(){
-        
+    func buscarInvitacion(code: String){
+        if let invitacion = ViewController.dbManager?.buscarCodigo(codigo: code){
+            
+        }
     }
 }
