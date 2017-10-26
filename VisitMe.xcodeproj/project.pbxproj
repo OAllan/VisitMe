@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		74A3B8A6A24D6072C2383B12 /* Pods_VisitMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */; };
 		E37030B21FA0E9340067552D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37030B11FA0E9340067552D /* DBManager.swift */; };
+		E370826F1FA191990018CA15 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826C1FA191990018CA15 /* Usuario.swift */; };
+		E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826D1FA191990018CA15 /* CondoUsuario.swift */; };
+		E37082711FA191990018CA15 /* Invitacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826E1FA191990018CA15 /* Invitacion.swift */; };
 		E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D4A231F9F98E3001ABC91 /* AppDelegate.swift */; };
 		E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D4A251F9F98E3001ABC91 /* ViewController.swift */; };
 		E39D4A291F9F98E3001ABC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A271F9F98E3001ABC91 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		79CF443CF06AB11050DC9A21 /* Pods-VisitMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisitMe/Pods-VisitMe.release.xcconfig"; sourceTree = "<group>"; };
 		7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37030B11FA0E9340067552D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		E370826C1FA191990018CA15 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		E370826D1FA191990018CA15 /* CondoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUsuario.swift; sourceTree = "<group>"; };
+		E370826E1FA191990018CA15 /* Invitacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invitacion.swift; sourceTree = "<group>"; };
 		E39D4A201F9F98E3001ABC91 /* VisitMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39D4A231F9F98E3001ABC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E39D4A251F9F98E3001ABC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,9 @@
 		E37030B31FA0F11C0067552D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E370826D1FA191990018CA15 /* CondoUsuario.swift */,
+				E370826E1FA191990018CA15 /* Invitacion.swift */,
+				E370826C1FA191990018CA15 /* Usuario.swift */,
 				E37030B11FA0E9340067552D /* DBManager.swift */,
 			);
 			path = Model;
@@ -241,7 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
+				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
+				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
 				E37030B21FA0E9340067552D /* DBManager.swift in Sources */,
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 			);
