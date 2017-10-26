@@ -15,9 +15,3 @@ Instalar las dependencias del proyecto y generar el WorkSpace con el siguiente c
 ```
 pod install
 ```
-
-Para agregar un nuevo Pod, modifica el archivo PodFile, después corre el siguiente comando: 
-
-```
-pod update
-```
