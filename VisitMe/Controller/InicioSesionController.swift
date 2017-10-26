@@ -100,7 +100,24 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
             }
             
         }
+        else{
+            showAlert()
+        }
         
+    }
+    
+    func showAlert()
+    {
+        let alert = UIAlertController(title: "Error al iniciar sesion", message: "Usuario, contraseña o tipo de usuario incorrecto", preferredStyle: .alert)
+        
+        
+        let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            
+        })
+        
+        
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
     
