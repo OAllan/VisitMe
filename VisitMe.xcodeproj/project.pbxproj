@@ -65,6 +65,7 @@
 		E37030B31FA0F11C0067552D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				81E7C61D1FA1A016007541A3 /* admin.swift */,
 				E37082741FA194E70018CA15 /* Vigilante.swift */,
 				E370826D1FA191990018CA15 /* CondoUsuario.swift */,
 				E370826E1FA191990018CA15 /* Invitacion.swift */,
@@ -85,7 +86,6 @@
 		E39D4A171F9F98E3001ABC91 = {
 			isa = PBXGroup;
 			children = (
-				81E7C61D1FA1A016007541A3 /* admin.swift */,
 				E39D4A221F9F98E3001ABC91 /* VisitMe */,
 				E39D4A211F9F98E3001ABC91 /* Products */,
 				7E09B43A55F2DD58A06F695E /* Pods */,
