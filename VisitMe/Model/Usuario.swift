@@ -10,14 +10,20 @@ import Foundation
 
 class Usuario {
     
+    var idUsuario: String?
     var nombres: String?
     var apellidoPaterno: String?
     var apellidoMaterno: String?
     
-    init(nombres: String, apellidoPaterno: String, apellidoMaterno: String) {
+    init(idUsuario: String, nombres: String, apellidoPaterno: String, apellidoMaterno: String) {
+        self.idUsuario = idUsuario
         self.nombres = nombres
         self.apellidoPaterno = apellidoPaterno
         self.apellidoMaterno = apellidoMaterno
+        
+        func getIdUsuario() ->{
+            return self.idUsuario!
+        }
         
         func getNombres() -> String{
             return self.nombres!
@@ -29,6 +35,10 @@ class Usuario {
         
         func getApellidoMaterno() -> String {
             return self.apellidoMaterno!
+        }
+        
+        func setIdUsuario(idUsuario: String){
+            self.idUsuario = idUsuario
         }
         
         func setNombres(nombres: String){
