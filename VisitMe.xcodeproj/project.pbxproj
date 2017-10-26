@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		74A3B8A6A24D6072C2383B12 /* Pods_VisitMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */; };
+		E3219A0B1FA1C9BF00E555F0 /* VigilanteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */; };
+		E3219A0D1FA1DB6200E555F0 /* ResidenteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */; };
 		E37030B21FA0E9340067552D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37030B11FA0E9340067552D /* DBManager.swift */; };
 		E370826F1FA191990018CA15 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826C1FA191990018CA15 /* Usuario.swift */; };
 		E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826D1FA191990018CA15 /* CondoUsuario.swift */; };
@@ -18,12 +20,15 @@
 		E39D4A291F9F98E3001ABC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A271F9F98E3001ABC91 /* Main.storyboard */; };
 		E39D4A2B1F9F98E3001ABC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2A1F9F98E3001ABC91 /* Assets.xcassets */; };
 		E39D4A2E1F9F98E3001ABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2C1F9F98E3001ABC91 /* LaunchScreen.storyboard */; };
+		E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DA9E357B35355FD66A36BE6 /* Pods-VisitMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisitMe/Pods-VisitMe.debug.xcconfig"; sourceTree = "<group>"; };
 		79CF443CF06AB11050DC9A21 /* Pods-VisitMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisitMe/Pods-VisitMe.release.xcconfig"; sourceTree = "<group>"; };
 		7D522A97928A6751A9A8B83B /* Pods_VisitMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigilanteController.swift; sourceTree = "<group>"; };
+		E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidenteController.swift; sourceTree = "<group>"; };
 		E37030B11FA0E9340067552D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E370826C1FA191990018CA15 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E370826D1FA191990018CA15 /* CondoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUsuario.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		E39D4A2D1F9F98E3001ABC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E39D4A2F1F9F98E3001ABC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39D4A351F9F9AC1001ABC91 /* VisitMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisitMe-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				E39D4A251F9F98E3001ABC91 /* ViewController.swift */,
+				E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */,
+				E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */,
+				E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,9 +266,12 @@
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
 				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
+				E3219A0B1FA1C9BF00E555F0 /* VigilanteController.swift in Sources */,
+				E3219A0D1FA1DB6200E555F0 /* ResidenteController.swift in Sources */,
 				E37030B21FA0E9340067552D /* DBManager.swift in Sources */,
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
+				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    static var dbManager = DBManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let dbManager = DBManager()
-        dbManager.abrirBaseDeDatos()
-        dbManager.crearTablas()
+        ViewController.dbManager.abrirBaseDeDatos()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

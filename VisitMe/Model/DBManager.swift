@@ -32,13 +32,13 @@ class DBManager{
     
     func crearTablas() -> Bool{
         let sqlCreaTablaAdmin = "CREATE TABLE IF NOT EXISTS ADMIN" +
-             "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255))"
+             "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
         
         let sqlCreaTablaUser = "CREATE TABLE IF NOT EXISTS USER" +
-        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255))"
+        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
         
         let sqlCreaTablaVigilante = "CREATE TABLE IF NOT EXISTS VIGILANTE" +
-        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255))"
+        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
         
         let sqlCreaTablaCondominio = "CREATE TABLE IF NOT EXISTS CONDOMINIO" +
         "(ID INTEGER PRIMARY KEY AUTOINCREMENT, ADMIN INTEGER, CALLE VARCHAR(255), NUMERO CHAR(5), COLONIA VARCHAR(255), CP CHAR(5), CIUDAD VARCHAR(255), ESTADO VARCHAR(100))"
@@ -63,5 +63,50 @@ class DBManager{
             print("Error: \(msg)")
             return false
         }
+    }
+    
+    func registrarVigilante(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
+        let sqlInserta = "INSERT INTO VIGILANTE (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
+            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
+            print("Datos registrados")
+        }
+        else{
+            sqlite3_close(baseDatos)
+            let msg = String.init(cString: error!)
+            print("Error: \(msg)")
+        }
+        
+    }
+    
+    func cargarVigilante(email: String) -> Vigilante? {
+        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM VIGILANTE WHERE EMAIL = '\(email)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
+                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
+                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
+                return Vigilante(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno)
+            }
+        }
+        return nil
+    }
+    
+    func compararPassword(email: String, password: String, tabla: String)->Bool{
+        let sqlConsulta = "SELECT PASSWORD FROM \(tabla) WHERE EMAIL = '\(email)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let pass = String.init(cString: sqlite3_column_text(declaracion, 0))
+                print(pass)
+                if pass == password{
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
