@@ -234,11 +234,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitMe/Pods-VisitMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
+				"${BUILT_PRODUCTS_DIR}/MongoLabKitSwift/MongoLabKitSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BarcodeScanner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MongoLabKitSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
