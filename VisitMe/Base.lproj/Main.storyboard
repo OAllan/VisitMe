@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -37,6 +37,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
+                                            <action selector="sendMail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zut-h0-BQE"/>
                                             <segue destination="5vm-na-4GR" kind="show" id="G8g-Yo-jQw"/>
                                         </connections>
                                     </button>
