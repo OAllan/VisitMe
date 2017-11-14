@@ -32,9 +32,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
@@ -45,6 +42,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
         let imageData = UIImagePNGRepresentation(UIImage(named: "noSirve.png")!)
         myController.addAttachmentData(imageData!, mimeType: "image/png", fileName: "noSirve")
+        
         
         return mailComposerVC
     }
