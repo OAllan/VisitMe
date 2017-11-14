@@ -24,6 +24,7 @@
 		E39D4A2B1F9F98E3001ABC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2A1F9F98E3001ABC91 /* Assets.xcassets */; };
 		E39D4A2E1F9F98E3001ABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2C1F9F98E3001ABC91 /* LaunchScreen.storyboard */; };
 		E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */; };
+		E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E39D4A2F1F9F98E3001ABC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39D4A351F9F9AC1001ABC91 /* VisitMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisitMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionController.swift; sourceTree = "<group>"; };
+		E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E3219A0A1FA1C9BF00E555F0 /* VigilanteController.swift */,
 				E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */,
 				E3219A0E1FA22B3700E555F0 /* QRScannerController.swift */,
+				E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				E3219A0D1FA1DB6200E555F0 /* ResidenteController.swift in Sources */,
 				6AAEBECB1FA2342900E829FE /* Admin.swift in Sources */,
 				E37030B21FA0E9340067552D /* DBManager.swift in Sources */,
+				E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */,
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
