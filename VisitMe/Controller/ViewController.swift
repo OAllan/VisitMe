@@ -40,6 +40,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         mailComposerVC.setToRecipients(["dan13l_985@hotmail.com"])
         mailComposerVC.setSubject("Sending you an in-app e-mail...")
         mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        let imageData = UIImagePNGRepresentation(UIImage(named: "noSirve.png")!)
+        myController.addAttachmentData(imageData!, mimeType: "image/png", fileName: "noSirve")
         
         
         return mailComposerVC
