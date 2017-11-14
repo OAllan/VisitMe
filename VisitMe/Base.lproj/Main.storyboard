@@ -38,7 +38,6 @@
                                         </state>
                                         <connections>
                                             <action selector="sendMail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zut-h0-BQE"/>
-                                            <segue destination="5vm-na-4GR" kind="show" id="G8g-Yo-jQw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-Ou-tuE">
