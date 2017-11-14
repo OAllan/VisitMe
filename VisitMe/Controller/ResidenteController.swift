@@ -16,6 +16,9 @@ class ResidenteController: UIViewController{
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var apellidoTf: UILabel!
     
+    var usuario: Usuario?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +30,13 @@ class ResidenteController: UIViewController{
         nombreLabel.text = residente?.nombre
         apellidoTf.text = "\(residente!.apellidoPaterno!) \(residente!.apellidoMaterno!)"
         self.email.text = email
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destino = segue.destination as! InvitadoController
+        destino.usuario = self.usuario
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
