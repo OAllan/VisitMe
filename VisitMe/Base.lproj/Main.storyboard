@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -1021,6 +1021,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYs-rD-Yts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2442.4000000000001" y="-1130.2848575712144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1lx-Bx-hy8">
+            <objects>
+                <viewController id="qXn-Wo-X4A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCe-MN-Cqm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="gye-IW-IB1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpB-70-s4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1799" y="-521"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="muP-ad-M1d">
