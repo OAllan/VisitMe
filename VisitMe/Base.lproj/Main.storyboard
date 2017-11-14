@@ -997,25 +997,16 @@
             </objects>
             <point key="canvasLocation" x="-2686" y="-344"/>
         </scene>
-        <!--Generator Controller-->
+        <!--View Controller-->
         <scene sceneID="fDM-u9-hEh">
             <objects>
-                <viewController id="dlO-Tf-sLb" customClass="QRGeneratorController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dlO-Tf-sLb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhT-u5-T7B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYD-bF-IbT">
-                                <rect key="frame" x="67" y="214" width="240" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Kgx-72-AIB"/>
                     </view>
-                    <connections>
-                        <outlet property="imagenQR" destination="oYD-bF-IbT" id="o3i-TK-BKv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYs-rD-Yts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
