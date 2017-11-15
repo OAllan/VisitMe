@@ -9,6 +9,7 @@
 import UIKit
 import QRCode
 
+
 class InvitadoController: UIViewController{
     
     @IBOutlet weak var nombre: UITextField!
@@ -56,6 +57,7 @@ class InvitadoController: UIViewController{
     func verificarCampos() -> Bool{
         return nombre.text! != "" && apellidoPaterno.text != "" && apellidoMaterno.text != "" && email.text != ""
     }
+
    
     
     
@@ -83,7 +85,7 @@ class InvitadoController: UIViewController{
             placas.textColor = UIColor.black
         }
     }
-    
+
     func showErrorAlert()
     {
         let alert = UIAlertController(title: "Datos incompletos", message: "Todos los campos deben estar llenos", preferredStyle: .alert)
@@ -121,8 +123,7 @@ class InvitadoController: UIViewController{
         self.invitadoRegistradoController?.imagenQROutlet.image = qrCode?.image
         return qrCode?.image
     }
-    
-    
+
     
     
     
