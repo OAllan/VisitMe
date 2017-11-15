@@ -7,195 +7,101 @@
 //
 
 import Foundation
+import OHMySQL
 
 class DBManager{
     
     var baseDatos: OpaquePointer? = nil
+    var context: OHMySQLQueryContext?
     
-    func abrirBaseDeDatos() -> Bool{
-        if let path = self.obtenerPath("VisitMeData.txt"){
-            if sqlite3_open(path.absoluteString, &baseDatos) == SQLITE_OK {
-                print("Conexion exitosa")
-                return true
-            }
-            sqlite3_close(baseDatos)
-        }
-        return false
+    func conectar(){
+        let client = OHMySQLUser(userName: "sql3204932", password: "nIE6elrb66", serverName: "sql3.freemysqlhosting.net", dbName: "sql3204932", port: 3306, socket: nil)
+        let coordinator = OHMySQLStoreCoordinator(user: client!)
+        coordinator.encoding = .UTF8MB4
+        coordinator.connect()
+        context = OHMySQLQueryContext()
+        context?.storeCoordinator = coordinator
     }
     
-    func obtenerPath(_ salida: String) -> URL? {
-        if let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            return path.appendingPathComponent(salida)
-        }
-        return nil
-    }
-    
-    func crearTablas() -> Bool{
-        let sqlCreaTablaAdmin = "CREATE TABLE IF NOT EXISTS ADMIN" +
-             "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
-        
-        let sqlCreaTablaUser = "CREATE TABLE IF NOT EXISTS RESIDENTE" +
-        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
-        
-        let sqlCreaTablaVigilante = "CREATE TABLE IF NOT EXISTS VIGILANTE" +
-        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), EMAIL VARCHAR(255), PASSWORD VARCHAR(255))"
-        
-        let sqlCreaTablaCondominio = "CREATE TABLE IF NOT EXISTS CONDOMINIO" +
-        "(ID INTEGER PRIMARY KEY AUTOINCREMENT, ADMIN INTEGER, CALLE VARCHAR(255), NUMERO CHAR(5), COLONIA VARCHAR(255), CP CHAR(5), CIUDAD VARCHAR(255), ESTADO VARCHAR(100), FOREIGN KEY(ADMIN) REFERENCES ADMIN(ID))"
-        
-        let sqlCreaTablaCondominioVigilante = "CREATE TABLE IF NOT EXISTS CONDOMINIO_VIGILANTE" +
-        "(CONDOMINIO INTEGER, VIGILANTE INTEGER, PRIMARY KEY(CONDOMINIO, VIGILANTE), FOREIGN KEY(CONDOMINIO) REFERENCES CONDOMINIO(ID),FOREIGN KEY(VIGILANTE) REFERENCES VIGILANTE(ID))"
-        
-        let sqlCreaTablaCondominioUsuario = "CREATE TABLE IF NOT EXISTS CONDOMINIO_USUARIO" +
-        "(CONDOMINIO INTEGER, USUARIO INTEGER, PRIMARY KEY(CONDOMINIO, USUARIO), FOREIGN KEY(CONDOMINIO) REFERENCES CONDOMINIO(ID),FOREIGN KEY(USUARIO) REFERENCES USER(ID))"
-        
-        let sqlCreaTablaInvitacion = "CREATE TABLE IF NOT EXISTS INVITACION" +
-        "(CODIGO VARCHAR(30) PRIMARY KEY, USUARIO INTEGER, NOMBRE VARCHAR(255), APELLIDO_PATERNO VARCHAR(255), APELLIDO_MATERNO VARCHAR(255), PLACAS VARCHAR(8), HORA_ENTRADA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, HORA_SALIDA TIMESTAMP DEFAULT CURRENT_TIMESTAMP, EXPIRADA CHAR(1), EMAIL VARCHAR(255), FECHA_VISITA DATE, FOREIGN KEY (USUARIO) REFERENCES USER(ID))"
-        
-        let sqlCreaTabla = "\(sqlCreaTablaAdmin);\(sqlCreaTablaUser);\(sqlCreaTablaVigilante);\(sqlCreaTablaCondominio);\(sqlCreaTablaCondominioVigilante);\(sqlCreaTablaCondominioUsuario);\(sqlCreaTablaInvitacion);"
-        
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
-            return true
-        } else {
-            sqlite3_close(baseDatos)
-            let msg = String.init(cString: error!)
-            print("Error: \(msg)")
-            return false
-        }
-    }
+   
     
     func registrarVigilante(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
-        let sqlInserta = "INSERT INTO VIGILANTE (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
-            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
-            print("Datos registrados")
-        }
-        else{
-            sqlite3_close(baseDatos)
-            let msg = String.init(cString: error!)
-            print("Error: \(msg)")
-        }
+        
+        self.registrarUsuario(tabla: "VIGILANTE", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
         
     }
     
     func registrarResidente(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
-        let sqlInserta = "INSERT INTO RESIDENTE (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
-            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
-            print("Datos registrados")
-        }
-        else{
-            sqlite3_close(baseDatos)
-            let msg = String.init(cString: error!)
-            print("Error: \(msg)")
-        }
+        self.registrarUsuario(tabla: "RESIDENTE", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
         
     }
     
     func registrarAdmin(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
-        let sqlInserta = "INSERT INTO ADMIN (NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, EMAIL, PASSWORD) "
-            + "VALUES ('\(nombre)', '\(apellidoPaterno)', '\(apellidoMaterno)', '\(email)', '\(password)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) == SQLITE_OK {
-            print("Datos registrados")
-        }
-        else{
-            sqlite3_close(baseDatos)
-            let msg = String.init(cString: error!)
-            print("Error: \(msg)")
-        }
+        self.registrarUsuario(tabla: "ADMINISTRADOR", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
         
     }
     
+    
+    
+    func registrarUsuario(tabla: String, nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
+        let query = OHMySQLQueryRequestFactory.insert(tabla, set: ["NOMBRE": nombre, "APELLIDO_PATERNO": apellidoPaterno, "APELLIDO_MATERNO": apellidoMaterno, "EMAIL": email, "PASSWORD": password])
+        try? context?.execute(query)
+    }
+    
     func cargarVigilante(email: String) -> Vigilante? {
-        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM VIGILANTE WHERE EMAIL = '\(email)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
-                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
-                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
-                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
-                return Vigilante(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
-            }
-        }
-        return nil
+        let query = OHMySQLQueryRequestFactory.select("VIGILANTE", condition: "EMAIL= '\(email)'")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!![0]
+        return Vigilante(id: "\(response["ID"] as! NSNumber)", nombre: response["NOMBRE"] as! String, apellidoPaterno: response["APELLIDO_PATERNO"] as! String, apellidoMaterno: response["APELLIDO_MATERNO"] as! String, email: response["EMAIL"] as! String)
     }
     
     func cargarResidente(email: String) -> Usuario? {
-        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM RESIDENTE WHERE EMAIL = '\(email)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
-                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
-                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
-                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
-                return Usuario(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
-            }
-        }
-        return nil
+        let query = OHMySQLQueryRequestFactory.select("RESIDENTE", condition: "EMAIL= '\(email)'")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!![0]
+        return Usuario(id: "\(response["ID"] as! NSNumber)", nombre: response["NOMBRE"] as! String, apellidoPaterno: response["APELLIDO_PATERNO"] as! String, apellidoMaterno: response["APELLIDO_MATERNO"] as! String, email: response["EMAIL"] as! String)
     }
     
     func cargarAdmin(email: String) -> Admin? {
-        let sqlConsulta = "SELECT ID, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO FROM ADMIN WHERE EMAIL = '\(email)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
-                let nombre = String.init(cString: sqlite3_column_text(declaracion, 1))
-                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 2))
-                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
-                return Admin(id: id, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, email: email)
-            }
-        }
-        return nil
+        let query = OHMySQLQueryRequestFactory.select("ADMINISTRADOR", condition: "EMAIL= '\(email)'")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!![0]
+        return Admin(id: "\(response["ID"] as! NSNumber)", nombre: response["NOMBRE"] as! String, apellidoPaterno: response["APELLIDO_PATERNO"] as! String, apellidoMaterno: response["APELLIDO_MATERNO"] as! String, email: response["EMAIL"] as! String)
     }
     
     func compararPassword(email: String, password: String, tabla: String) ->Bool {
-        let sqlConsulta = "SELECT PASSWORD FROM \(tabla) WHERE EMAIL = '\(email)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let pass = String.init(cString: sqlite3_column_text(declaracion, 0))
-                print(pass)
-                if pass == password{
-                    return true;
-                }
-            }
+        
+        let query = OHMySQLQueryRequestFactory.select(tabla, condition: "EMAIL= '\(email)'")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if response.count <= 0{
+            return false;
         }
+        let data = response[0]
+        let pass = data["PASSWORD"] as! String
+        if pass == password{
+            return true;
+        }
+        
         return false;
     }
     
     func buscarCodigo(codigo: String) -> Invitacion? {
-        let sqlConsulta = "SELECT * FROM INVITACION WHERE CODIGO = '\(codigo)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let usuario = String.init(cString: sqlite3_column_text(declaracion, 1))
-                let nombre = String.init(cString: sqlite3_column_text(declaracion, 2))
-                let apellidoPaterno = String.init(cString: sqlite3_column_text(declaracion, 3))
-                let apellidoMaterno = String.init(cString: sqlite3_column_text(declaracion, 4))
-                let placas = String.init(cString: sqlite3_column_text(declaracion, 5))
-                let horaEntrada = String.init(cString: sqlite3_column_text(declaracion, 6))
-                let horaSalida = String.init(cString: sqlite3_column_text(declaracion, 7))
-                let expirada = String.init(cString: sqlite3_column_text(declaracion, 8))
-                let email = String.init(cString: sqlite3_column_text(declaracion, 9))
-                let fecha = String.init(cString: sqlite3_column_text(declaracion, 2))
-                
-                return Invitacion(folio: codigo, idUsuario: usuario, nombres: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, placas: placas, horaEntrada: horaEntrada, horaSalida: horaSalida, fechaValida: fecha, esExpirada: expirada == "1", email: email)
-                
-            }
+        let query = OHMySQLQueryRequestFactory.select("INVITACION", condition: "CODIGO= '\(codigo)'")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if response.count <= 0{
+            return nil
         }
-        return nil;
+        let data = response[0]
+        let usuario = "\(data["USUARIO"] as! NSNumber)"
+        let nombre = data["NOMBRE"] as! String
+        let apellidoPaterno = data["APELLIDO_PATERNO"] as! String
+        let apellidoMaterno = data["APELLIDO_MATERNO"] as! String
+        let placas = data["PLACAS"] as? String
+        let horaEntrada = data["HORA_ENTRADA"] as! String
+        let horaSalida = data["HORA_ENTRADA"] as! String
+        let expirada = data["EXPIRADA"] as! String
+        let email = data["EMAIL"] as! String
+        let fecha = data["FECHA_VISITA"] as! String
+        
+        return Invitacion(folio: codigo, idUsuario: usuario, nombres: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, placas: placas, horaEntrada: horaEntrada, horaSalida: horaSalida, fechaValida: fecha, esExpirada: expirada == "1", email: email)
+        
     }
     
-    func close(){
-        if baseDatos != nil{
-            sqlite3_close(baseDatos)
-        }
-    }
 }
