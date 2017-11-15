@@ -18,8 +18,6 @@ class QRGeneratorController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let qrCode = QRCode("12345678901213jd")
-        imagenQR.image = qrCode?.image
     }
     
     override func didReceiveMemoryWarning() {

@@ -104,4 +104,33 @@ class DBManager{
         
     }
     
+    func cargarVisitantes(residenteId: String) -> [Invitacion]?{
+        let query = OHMySQLQueryRequestFactory.select("INVITACION", condition: "USUARIO= \(residenteId)")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if response.count <= 0{
+            return nil
+        }
+        return self.toArrayVisitantes(dict: response)
+    }
+    
+    func toArrayVisitantes(dict: [[String:Any?]]) ->[Invitacion]?{
+        var visitantes: [Invitacion] = []
+        for data in dict {
+            let codigo = data["CODIGO"] as! String
+            let usuario = "\(data["USUARIO"] as! NSNumber)"
+            let nombre = data["NOMBRE"] as! String
+            let apellidoPaterno = data["APELLIDO_PATERNO"] as! String
+            let apellidoMaterno = data["APELLIDO_MATERNO"] as! String
+            let placas = data["PLACAS"] as? String
+            let horaEntrada = data["HORA_ENTRADA"] as! String
+            let horaSalida = data["HORA_ENTRADA"] as! String
+            let expirada = data["EXPIRADA"] as! String
+            let email = data["EMAIL"] as! String
+            let fecha = data["FECHA_VISITA"] as! String
+            let invitacion = Invitacion(folio: codigo, idUsuario: usuario, nombres: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, placas: placas, horaEntrada: horaEntrada, horaSalida: horaSalida, fechaValida: fecha, esExpirada: expirada == "1", email: email)
+            visitantes.append(invitacion)
+        }
+        
+        return visitantes
+    }
 }

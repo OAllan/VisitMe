@@ -25,6 +25,8 @@
 		E39D4A2E1F9F98E3001ABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2C1F9F98E3001ABC91 /* LaunchScreen.storyboard */; };
 		E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */; };
 		E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */; };
+		E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */; };
+		E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */; };
 		E523238F1FBB7EC6000B8058 /* InvitadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523238E1FBB7EC6000B8058 /* InvitadoController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		E39D4A351F9F9AC1001ABC91 /* VisitMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisitMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionController.swift; sourceTree = "<group>"; };
 		E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorController.swift; sourceTree = "<group>"; };
+		E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitadoRegistradoController.swift; sourceTree = "<group>"; };
+		E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVisitantesController.swift; sourceTree = "<group>"; };
 		E523238E1FBB7EC6000B8058 /* InvitadoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitadoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 				E3219A0C1FA1DB6200E555F0 /* ResidenteController.swift */,
 				E3219A0E1FA22B3700E555F0 /* QRScannerController.swift */,
 				E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */,
+				E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */,
+				E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
+				E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */,
+				E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CP6MF2474S;
+				DEVELOPMENT_TEAM = 23254C7WGD;
 				INFOPLIST_FILE = VisitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.VisitMe;
@@ -452,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CP6MF2474S;
+				DEVELOPMENT_TEAM = 23254C7WGD;
 				INFOPLIST_FILE = VisitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.VisitMe;
