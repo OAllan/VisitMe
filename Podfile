@@ -8,6 +8,6 @@ target 'VisitMe' do
   # Pods for VisitMe
   pod 'BarcodeScanner'
   pod 'QRCode'
-  pod 'MongoLabKitSwift' 
+  pod 'OHMySQL'
 
 end
