@@ -36,12 +36,33 @@ class DBManager{
         
     }
     
+    func updateVigilante(atributoSeleccionado: String, datoActualizado: String, idActualizada: String){
+        self.updateUsuario(tabla: "VIGILANTE", atributo: atributoSeleccionado.uppercased(), dato: datoActualizado, ID: idActualizada)
+    }
+    
+    func updateAdministrador(atributoSeleccionado: String, datoActualizado: String, idActualizada: String){
+        self.updateUsuario(tabla: "ADMINISTRADOR", atributo: atributoSeleccionado.uppercased(), dato: datoActualizado, ID: idActualizada)
+    }
+    
+    func updateResidente(atributoSeleccionado: String, datoActualizado: String, idActualizada: String){
+        self.updateUsuario(tabla: "RESIDENTE", atributo: atributoSeleccionado.uppercased(), dato: datoActualizado, ID: idActualizada)
+    }
+    
+    func updateUsuario(tabla: String, atributo: String, dato: String, ID: String) {
+        let condicionBusqueda: String = "ID=" + ID
+        let query = OHMySQLQueryRequestFactory.update(tabla, set: [atributo: dato], condition: condicionBusqueda)
+        try? context?.execute(query)
+
+    func updateInvitacion(codigo: String, atributo: String, dato: String){
+        let condicionBusqueda: String = "CODIGO=" + codigo
+        let query = OHMySQLQueryRequestFactory.update("INVITACION", set: [atributo.uppercased(): dato], condition: condicionBusqueda)
+        try? context?.execute(query)
+    }
+    
     func registrarAdmin(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
         self.registrarUsuario(tabla: "ADMINISTRADOR", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
         
     }
-    
-    
     
     func registrarUsuario(tabla: String, nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
         let query = OHMySQLQueryRequestFactory.insert(tabla, set: ["NOMBRE": nombre, "APELLIDO_PATERNO": apellidoPaterno, "APELLIDO_MATERNO": apellidoMaterno, "EMAIL": email, "PASSWORD": password])
