@@ -19,7 +19,7 @@ class Invitacion{
     //Constructor
 
     init(folio: String, idUsuario: String, nombres: String, apellidoPaterno: String, apellidoMaterno: String,
-    placas: String, horaEntrada: String, horaSalida: String, fechaValida: String, esExpirada: Bool, email: String){
+    placas: String?, horaEntrada: String, horaSalida: String, fechaValida: String, esExpirada: Bool, email: String){
         self.folio = folio
         self.idUsuario = idUsuario
         self.nombres = nombres

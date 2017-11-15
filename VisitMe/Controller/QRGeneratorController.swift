@@ -8,7 +8,6 @@
 
 import UIKit
 import QRCode
-import MongoLabKitSwift
 
 
 class QRGeneratorController: UIViewController

@@ -38,7 +38,6 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         contraTf.delegate = self
         correoTf.delegate = self
-        ViewController.dbManager?.registrarResidente(nombre: "Aldo", apellidoPaterno: "Aguilar", apellidoMaterno: "Bermudez", password: "test", email: "aldo@mail.com")
     }
     
     override func didReceiveMemoryWarning() {
