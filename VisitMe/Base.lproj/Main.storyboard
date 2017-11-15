@@ -217,7 +217,7 @@
         <!--Escanear Código-->
         <scene sceneID="iiu-Xs-w9V">
             <objects>
-                <viewController id="69E-1Z-Rq8" customClass="BarcodeScannerController" customModule="BarcodeScanner" sceneMemberID="viewController">
+                <viewController id="69E-1Z-Rq8" customClass="QRScannerController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1dB-E3-2dm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
