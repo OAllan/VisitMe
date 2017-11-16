@@ -30,6 +30,9 @@
 		E523238F1FBB7EC6000B8058 /* InvitadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523238E1FBB7EC6000B8058 /* InvitadoController.swift */; };
 		E57D066D1FBE053A003D01C8 /* Champagne & Limousines Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E57D066A1FBE049B003D01C8 /* Champagne & Limousines Bold.ttf */; };
 		E57D066E1FBE0542003D01C8 /* Champagne & Limousines.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E57D066C1FBE049B003D01C8 /* Champagne & Limousines.ttf */; };
+		E57D06701FBE0EA4003D01C8 /* adminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57D066F1FBE0EA4003D01C8 /* adminController.swift */; };
+		E57D06721FBE1C03003D01C8 /* condoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57D06711FBE1C03003D01C8 /* condoController.swift */; };
+		E57D06741FBE276A003D01C8 /* perfilAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57D06731FBE276A003D01C8 /* perfilAdminController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		E57D066A1FBE049B003D01C8 /* Champagne & Limousines Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Champagne & Limousines Bold.ttf"; path = "../../../champagne_limousines/Champagne & Limousines Bold.ttf"; sourceTree = "<group>"; };
 		E57D066B1FBE049B003D01C8 /* Champagne & Limousines Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Champagne & Limousines Italic.ttf"; path = "../../../champagne_limousines/Champagne & Limousines Italic.ttf"; sourceTree = "<group>"; };
 		E57D066C1FBE049B003D01C8 /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Champagne & Limousines.ttf"; path = "../../../champagne_limousines/Champagne & Limousines.ttf"; sourceTree = "<group>"; };
+		E57D066F1FBE0EA4003D01C8 /* adminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminController.swift; sourceTree = "<group>"; };
+		E57D06711FBE1C03003D01C8 /* condoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = condoController.swift; sourceTree = "<group>"; };
+		E57D06731FBE276A003D01C8 /* perfilAdminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilAdminController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */,
 				E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */,
 				E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */,
+				E57D066F1FBE0EA4003D01C8 /* adminController.swift */,
+				E57D06711FBE1C03003D01C8 /* condoController.swift */,
+				E57D06731FBE276A003D01C8 /* perfilAdminController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				E523238F1FBB7EC6000B8058 /* InvitadoController.swift in Sources */,
 				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
 				E3219A0B1FA1C9BF00E555F0 /* VigilanteController.swift in Sources */,
+				E57D06721FBE1C03003D01C8 /* condoController.swift in Sources */,
 				E3219A0D1FA1DB6200E555F0 /* ResidenteController.swift in Sources */,
 				6AAEBECB1FA2342900E829FE /* Admin.swift in Sources */,
 				E37030B21FA0E9340067552D /* DBManager.swift in Sources */,
@@ -321,7 +331,9 @@
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
 				E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */,
+				E57D06741FBE276A003D01C8 /* perfilAdminController.swift in Sources */,
 				E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */,
+				E57D06701FBE0EA4003D01C8 /* adminController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
