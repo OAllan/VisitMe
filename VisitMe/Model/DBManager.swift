@@ -64,6 +64,30 @@ class DBManager{
         let query = OHMySQLQueryRequestFactory.update("INVITACION", set: [atributo.uppercased(): dato], condition: condicionBusqueda)
         try? context?.execute(query)
     }
+        
+    func borrarAdmin(idSeleccionada: String){
+        self.borrarRegistro(tabla: "ADMINISTRADOR", ID: idSeleccionada)
+    }
+    
+    func borrarResidente(idSeleccionada: String){
+        self.borrarRegistro(tabla: "RESIDENTE", ID: idSeleccionada)
+    }
+    
+    func borrarVigilante(idSeleccionada: String){
+        self.borrarRegistro(tabla: "VIGILANTE", ID: idSeleccionada)
+    }
+    
+    func borrarInvitacion(codigoSeleccionado: String){
+        let condicionBusqueda: String = "CODIGO=" + codigoSeleccionado
+        let query = OHMySQLQueryRequestFactory.delete("INVITACION", condition: condicionBusqueda)
+        try? context?.execute(query)
+    }
+    
+    func borrarRegistro(tabla: String, ID: String){
+        let condicionBusqueda: String = "ID=" + ID
+        let query = OHMySQLQueryRequestFactory.delete(tabla, condition: condicionBusqueda)
+        try? context?.execute(query)
+    }
     
     func registrarAdmin(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
         self.registrarUsuario(tabla: "ADMINISTRADOR", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
