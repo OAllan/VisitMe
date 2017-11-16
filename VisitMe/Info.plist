@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Champagne &amp; Limousines.ttf</string>
 		<string>Champagne &amp; Limousines Bold.ttf</string>
+		<string>Champagne &amp; Limousines.ttf</string>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
