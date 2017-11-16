@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import QRCode
 
 
-class InvitadoController: UIViewController{
+class InvitadoController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var nombre: UITextField!
     
@@ -32,21 +31,39 @@ class InvitadoController: UIViewController{
     var invitadoRegistradoController: InvitadoRegistradoController?
     
     var usuario: Usuario?
+    let keyboardHeight: CGFloat = 200
+    var cstDate: String?
+    let gmtDf: DateFormatter = DateFormatter()
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fecha.minimumDate = Date()
+        gmtDf.timeZone = NSTimeZone(name: "CST")! as TimeZone
+        gmtDf.dateFormat = "yyyy-MM-dd"
+        cstDate = gmtDf.string(from: Date())
+        fecha.minimumDate = gmtDf.date(from: cstDate!)
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         invitadoRegistradoController = storyBoard.instantiateViewController(withIdentifier: "registrado") as? InvitadoRegistradoController
         if !(invitadoRegistradoController?.isViewLoaded)! {
             invitadoRegistradoController?.loadView()
         }
+        
+        
+
     }
     
     @IBAction func guardar(_ sender: Any) {
         if verificarCampos(){
-            showSuccessAlert()
+            registrarInvitacion()
         }
         else{
             showErrorAlert()
@@ -58,9 +75,20 @@ class InvitadoController: UIViewController{
         return nombre.text! != "" && apellidoPaterno.text != "" && apellidoMaterno.text != "" && email.text != ""
     }
 
+    func registrarInvitacion(){
+        let codigo = UUID().uuidString
+        AppDelegate.dbManager.registrarInvitacion(codigo: codigo, nombre: nombre.text!, apellidoPaterno: apellidoPaterno.text!, apellidoMaterno: apellidoMaterno.text!, placas: self.getAtributoPlacas(), fecha: self.gmtDf.string(from: fecha.date), email: email.text!, usuario: (usuario?.id)!)
+        self.invitadoRegistradoController?.invitacion = self.generarInvitado(codigo: codigo)
+        showSuccessAlert()
+    }
    
     
-    
+    func getAtributoPlacas() ->String?{
+        if carroSwitch.isOn && placas.text! != "" &&  placas.text! != "Placas"{
+            return placas.text
+        }
+        return nil
+    }
     
     @IBAction func carroBool(_ sender: UISwitch) {
        
@@ -107,7 +135,8 @@ class InvitadoController: UIViewController{
         let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
             let navigationInvitados = self.navigationController!
             self.navigationController?.popViewController(animated: true)
-            self.invitadoRegistradoController?.imagenQR = self.generarCodigo()
+            
+            self.invitadoRegistradoController?.cargarInformacion()
             navigationInvitados.pushViewController(self.invitadoRegistradoController!, animated: true)
             
         })
@@ -117,12 +146,11 @@ class InvitadoController: UIViewController{
         present(alert, animated: true, completion: nil)
     }
     
-    
-    func generarCodigo() -> UIImage?{
-        let qrCode = QRCode("12345678901213jd")
-        self.invitadoRegistradoController?.imagenQROutlet.image = qrCode?.image
-        return qrCode?.image
+    func generarInvitado(codigo: String) ->Invitacion? {
+        return Invitacion(folio: codigo, idUsuario: (usuario?.id)!, nombres: (nombre.text)!, apellidoPaterno: (apellidoPaterno.text)!, apellidoMaterno: (apellidoMaterno.text)!, placas: self.getAtributoPlacas(), horaEntrada: "0", horaSalida: "0", fechaValida:gmtDf.string(from: fecha.date), esExpirada: false, email: email.text!)
     }
+    
+    
 
     
     

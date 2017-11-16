@@ -24,6 +24,11 @@ class ResidenteController: UIViewController{
         
     }
     
+    @IBAction func cerrarSesion(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pantallaInicial = storyBoard.instantiateViewController(withIdentifier: "pantallaInicial") as! ViewController
+        present(pantallaInicial, animated: true, completion: nil)
+    }
     
     
     func cargarInformacion(email: String){
@@ -32,12 +37,6 @@ class ResidenteController: UIViewController{
         self.email.text = email
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destino = segue.destination as! InvitadoController
-        destino.usuario = self.usuario
-        
-        
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

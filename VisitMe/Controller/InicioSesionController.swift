@@ -72,25 +72,32 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func iniciarSesion(_ sender: Any) {
         if ViewController.dbManager!.compararPassword(email: correoTf.text!, password: contraTf.text!, tabla: (tipo?.uppercased())!){
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             switch tipo!{
             case "Vigilante":
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
                 tabViewController.loadViewIfNeeded()
-                
                 let vigilanteViewController = tabViewController.childViewControllers[0] as! VigilanteController
                 vigilanteViewController.loadViewIfNeeded()
                 vigilanteViewController.vigilante = ViewController.dbManager?.cargarVigilante(email: correoTf.text!)
                 vigilanteViewController.cargarInformacion(email: correoTf.text!)
                 self.present(tabViewController, animated: true, completion: nil)
             case "Residente":
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabResidenteController") as! UITabBarController
                 tabViewController.loadViewIfNeeded()
-                let residenteViewController = tabViewController.childViewControllers[0] as! ResidenteController
+                let navigationController = tabViewController.childViewControllers[1] as! UINavigationController
+                let navigationControllerResidente = tabViewController.childViewControllers[0] as! UINavigationController
+                navigationControllerResidente.loadViewIfNeeded()
+                let residenteViewController = navigationControllerResidente.topViewController as! ResidenteController
                 residenteViewController.loadViewIfNeeded()
-                residenteViewController.residente = ViewController.dbManager?.cargarResidente(email: correoTf.text!)
+                navigationController.loadViewIfNeeded()
+                let listaInvitadosController = navigationController.topViewController as! ListaVisitantesController
+                
+                let residente = ViewController.dbManager?.cargarResidente(email: correoTf.text!)
+                listaInvitadosController.residente = residente
+                residenteViewController.residente = residente
                 residenteViewController.cargarInformacion(email: correoTf.text!)
+                listaInvitadosController.actualizarDatos()
                 self.present(tabViewController, animated: true, completion: nil)
             case "Admnistrador":
                 print(".")

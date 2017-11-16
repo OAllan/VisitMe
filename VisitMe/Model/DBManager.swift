@@ -24,6 +24,11 @@ class DBManager{
     }
     
    
+    func registrarInvitacion(codigo: String, nombre: String, apellidoPaterno: String, apellidoMaterno: String, placas: String?, fecha: String, email: String, usuario: String) {
+        let query = OHMySQLQueryRequestFactory.insert("INVITACION", set: ["CODIGO": codigo, "USUARIO": usuario, "NOMBRE": nombre, "APELLIDO_PATERNO": apellidoPaterno, "APELLIDO_MATERNO": apellidoMaterno, "EMAIL": email, "FECHA_VISITA": fecha, "PLACAS": placas ?? nil])
+            try? context?.execute(query)
+        
+    }
     
     func registrarVigilante(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
         
@@ -52,6 +57,7 @@ class DBManager{
         let condicionBusqueda: String = "ID=" + ID
         let query = OHMySQLQueryRequestFactory.update(tabla, set: [atributo: dato], condition: condicionBusqueda)
         try? context?.execute(query)
+    }
 
     func updateInvitacion(codigo: String, atributo: String, dato: String){
         let condicionBusqueda: String = "CODIGO=" + codigo
