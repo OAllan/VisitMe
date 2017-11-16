@@ -23,6 +23,9 @@
 		E39D4A291F9F98E3001ABC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A271F9F98E3001ABC91 /* Main.storyboard */; };
 		E39D4A2B1F9F98E3001ABC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2A1F9F98E3001ABC91 /* Assets.xcassets */; };
 		E39D4A2E1F9F98E3001ABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2C1F9F98E3001ABC91 /* LaunchScreen.storyboard */; };
+		E3A372C11FBE3FAF00BFA46D /* condoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A372BE1FBE3FAE00BFA46D /* condoController.swift */; };
+		E3A372C21FBE3FAF00BFA46D /* perfilAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A372BF1FBE3FAE00BFA46D /* perfilAdminController.swift */; };
+		E3A372C31FBE3FAF00BFA46D /* adminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A372C01FBE3FAE00BFA46D /* adminController.swift */; };
 		E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */; };
 		E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */; };
 		E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */; };
@@ -52,6 +55,9 @@
 		E39D4A2D1F9F98E3001ABC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E39D4A2F1F9F98E3001ABC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39D4A351F9F9AC1001ABC91 /* VisitMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisitMe-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3A372BE1FBE3FAE00BFA46D /* condoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = condoController.swift; path = ../../../../../../../Desktop/condoController.swift; sourceTree = "<group>"; };
+		E3A372BF1FBE3FAE00BFA46D /* perfilAdminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = perfilAdminController.swift; path = ../../../../../../../Desktop/perfilAdminController.swift; sourceTree = "<group>"; };
+		E3A372C01FBE3FAE00BFA46D /* adminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = adminController.swift; path = ../../../../../../../Desktop/adminController.swift; sourceTree = "<group>"; };
 		E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionController.swift; sourceTree = "<group>"; };
 		E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorController.swift; sourceTree = "<group>"; };
 		E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitadoRegistradoController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 		E37030B41FA0F1340067552D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E3A372C01FBE3FAE00BFA46D /* adminController.swift */,
+				E3A372BE1FBE3FAE00BFA46D /* condoController.swift */,
+				E3A372BF1FBE3FAE00BFA46D /* perfilAdminController.swift */,
 				E39D4A251F9F98E3001ABC91 /* ViewController.swift */,
 				E523238E1FBB7EC6000B8058 /* InvitadoController.swift */,
 				E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */,
@@ -287,8 +296,10 @@
 			files = (
 				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
+				E3A372C21FBE3FAF00BFA46D /* perfilAdminController.swift in Sources */,
 				E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
+				E3A372C31FBE3FAF00BFA46D /* adminController.swift in Sources */,
 				6AAEBECD1FA234B500E829FE /* Condominio.swift in Sources */,
 				E523238F1FBB7EC6000B8058 /* InvitadoController.swift in Sources */,
 				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
@@ -300,6 +311,7 @@
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
+				E3A372C11FBE3FAF00BFA46D /* condoController.swift in Sources */,
 				E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */,
 				E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */,
 			);
