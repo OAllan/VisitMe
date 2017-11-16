@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
+import MessageUI
 import QRCode
 
-class InvitadoRegistradoController: UIViewController{
+class InvitadoRegistradoController: UIViewController, MFMailComposeViewControllerDelegate{
     
     @IBOutlet weak var imagenQROutlet: UIImageView!
     var imagenQR: UIImage?
@@ -25,6 +25,39 @@ class InvitadoRegistradoController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func sendMail(_ sender: Any) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+                present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients([(invitacion?.email)!])
+        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        let imageData = UIImagePNGRepresentation(imagenQR!)
+        mailComposerVC.addAttachmentData(imageData!, mimeType: "image/png", fileName: "codigoqr.png")
+        
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -1260,6 +1260,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGO-lf-Duz">
                                                 <rect key="frame" x="0.0" y="0.0" width="256.5" height="30"/>
                                                 <state key="normal" title="Enviar por correo electronico"/>
+                                                <connections>
+                                                    <action selector="sendMail:" destination="pJC-bH-mKN" eventType="touchUpInside" id="f3W-yS-eCR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-cq-q5p">
                                                 <rect key="frame" x="256.5" y="0.0" width="86.5" height="30"/>

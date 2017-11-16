@@ -19,6 +19,7 @@ class ResidenteController: UIViewController{
     var usuario: Usuario?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
