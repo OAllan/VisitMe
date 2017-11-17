@@ -17,6 +17,9 @@
 		E35EFBDD1FBF48F8001E928F /* Champagne & Limousines Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E35EFBD91FBF48EF001E928F /* Champagne & Limousines Italic.ttf */; };
 		E35EFBDE1FBF48F8001E928F /* Champagne & Limousines.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E35EFBDA1FBF48F3001E928F /* Champagne & Limousines.ttf */; };
 		E35EFBDF1FBF48F8001E928F /* Champagne & Limousines Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E35EFBDB1FBF48F8001E928F /* Champagne & Limousines Bold.ttf */; };
+		E35EFBE31FBF4C26001E928F /* condoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE01FBF4C25001E928F /* condoController.swift */; };
+		E35EFBE41FBF4C26001E928F /* perfilAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE11FBF4C25001E928F /* perfilAdminController.swift */; };
+		E35EFBE51FBF4C26001E928F /* adminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE21FBF4C26001E928F /* adminController.swift */; };
 		E37030B21FA0E9340067552D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37030B11FA0E9340067552D /* DBManager.swift */; };
 		E370826F1FA191990018CA15 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826C1FA191990018CA15 /* Usuario.swift */; };
 		E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826D1FA191990018CA15 /* CondoUsuario.swift */; };
@@ -47,6 +50,9 @@
 		E35EFBD91FBF48EF001E928F /* Champagne & Limousines Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Italic.ttf"; sourceTree = "<group>"; };
 		E35EFBDA1FBF48F3001E928F /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines.ttf"; sourceTree = "<group>"; };
 		E35EFBDB1FBF48F8001E928F /* Champagne & Limousines Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Bold.ttf"; sourceTree = "<group>"; };
+		E35EFBE01FBF4C25001E928F /* condoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = condoController.swift; sourceTree = "<group>"; };
+		E35EFBE11FBF4C25001E928F /* perfilAdminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = perfilAdminController.swift; sourceTree = "<group>"; };
+		E35EFBE21FBF4C26001E928F /* adminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adminController.swift; sourceTree = "<group>"; };
 		E37030B11FA0E9340067552D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E370826C1FA191990018CA15 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E370826D1FA191990018CA15 /* CondoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUsuario.swift; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 		E37030B41FA0F1340067552D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E35EFBE21FBF4C26001E928F /* adminController.swift */,
+				E35EFBE01FBF4C25001E928F /* condoController.swift */,
+				E35EFBE11FBF4C25001E928F /* perfilAdminController.swift */,
 				E39D4A251F9F98E3001ABC91 /* ViewController.swift */,
 				E523238E1FBB7EC6000B8058 /* InvitadoController.swift */,
 				E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */,
@@ -311,8 +320,10 @@
 			files = (
 				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
+				E35EFBE41FBF4C26001E928F /* perfilAdminController.swift in Sources */,
 				E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
+				E35EFBE51FBF4C26001E928F /* adminController.swift in Sources */,
 				6AAEBECD1FA234B500E829FE /* Condominio.swift in Sources */,
 				E523238F1FBB7EC6000B8058 /* InvitadoController.swift in Sources */,
 				E37082711FA191990018CA15 /* Invitacion.swift in Sources */,
@@ -324,6 +335,7 @@
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
+				E35EFBE31FBF4C26001E928F /* condoController.swift in Sources */,
 				E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */,
 				E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */,
 			);

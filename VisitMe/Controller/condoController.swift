@@ -18,14 +18,12 @@ class condoController: UIViewController{
     @IBOutlet weak var estado: UITextField!
     @IBOutlet weak var delegacion: UITextField!
     
-    var perfilAdmin: UITabBarController?
+    var perfilAdmin: perfilAdminController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyBoardGuardar: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        perfilAdmin = storyBoardGuardar.instantiateViewController(withIdentifier: "superPerfilAdmin") as! UITabBarController
-
+        perfilAdmin = storyBoardGuardar.instantiateViewController(withIdentifier: "perfilAdmin") as! perfilAdminController
     }
     
     @IBAction func guardar(_ sender: Any) {
@@ -61,8 +59,8 @@ class condoController: UIViewController{
         
         let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
             let navigationPerfilAd = self.navigationController!
-
-            self.present(self.perfilAdmin!, animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+            navigationPerfilAd.pushViewController(self.perfilAdmin!, animated: true)
             
             
         })
