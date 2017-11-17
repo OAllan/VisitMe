@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,36 +29,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-Jz-Ope">
                                 <rect key="frame" x="16" y="512" width="335" height="109"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqZ-Lr-D5a">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="54.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqZ-Lr-D5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="62"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Iniciar Sesión">
-                                                    <attributes>
-                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="30" name="ChalkboardSE-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
+                                        <state key="normal" title="Iniciar Sesión">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="5vm-na-4GR" kind="show" id="G8g-Yo-jQw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-Ou-tuE">
-                                        <rect key="frame" x="0.0" y="54.5" width="335" height="54.5"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Administrador">
-                                                    <attributes>
-                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="30" name="ChalkboardSE-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-Ou-tuE">
+                                        <rect key="frame" x="0.0" y="62" width="335" height="47"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
+                                        <state key="normal" title="Administrador">
+                                            <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
                                             <segue destination="f9O-tM-HsK" kind="show" id="MkZ-dI-8kN"/>
@@ -125,74 +110,49 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FtY-ga-q7Y">
                                 <rect key="frame" x="27" y="91" width="320" height="485"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAZ-Xz-M3p">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="35.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Soy..">
-                                                <attributes>
-                                                    <font key="NSFont" size="25" name="ChalkboardSE-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de usuario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAZ-Xz-M3p">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Mw-zBQ">
-                                        <rect key="frame" x="0.0" y="43.5" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="42" width="320" height="216"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Xyv-qC-efD" id="fc2-88-bWF"/>
                                             <outlet property="delegate" destination="Xyv-qC-efD" id="c0A-it-cOt"/>
                                         </connections>
                                     </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5j-oa-J1B">
-                                        <rect key="frame" x="0.0" y="267.5" width="320" height="35.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Correo electrónico">
-                                                <attributes>
-                                                    <font key="NSFont" size="25" name="ChalkboardSE-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo electrónico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5j-oa-J1B">
+                                        <rect key="frame" x="0.0" y="270" width="320" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-qB-QKA">
-                                        <rect key="frame" x="0.0" y="311" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="312" width="320" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-Qi-6yW">
-                                        <rect key="frame" x="0.0" y="349" width="320" height="35.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Contraseña">
-                                                <attributes>
-                                                    <font key="NSFont" size="25" name="ChalkboardSE-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-Qi-6yW">
+                                        <rect key="frame" x="0.0" y="354" width="320" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcw-UF-CId">
-                                        <rect key="frame" x="0.0" y="392.5" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="396" width="320" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wef-ld-8gF">
-                                        <rect key="frame" x="0.0" y="430.5" width="320" height="54.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wef-ld-8gF">
+                                        <rect key="frame" x="0.0" y="438" width="320" height="47"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.29246040239999999" colorSpace="deviceWhite"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Iniciar Sesión">
-                                                    <attributes>
-                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="30" name="ChalkboardSE-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
+                                        <state key="normal" title="Iniciar Sesión">
+                                            <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
                                             <action selector="iniciarSesion:" destination="Xyv-qC-efD" eventType="touchUpInside" id="2dE-Px-hX4"/>
@@ -250,9 +210,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fay-If-vGT" kind="relationship" relationship="viewControllers" id="pMX-fS-NaR"/>
+                        <segue destination="RZg-6D-aTp" kind="relationship" relationship="viewControllers" id="ioh-S2-yQ0"/>
                         <segue destination="69E-1Z-Rq8" kind="relationship" relationship="viewControllers" id="9FC-w5-nEL"/>
                     </connections>
                 </tabBarController>
@@ -268,107 +230,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsX-yA-mjw">
-                                <rect key="frame" x="16" y="200" width="343" height="398"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ri5-6I-2mT">
+                                <rect key="frame" x="16" y="64" width="343" height="534"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDA-WX-gRx">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOT-8G-a9z">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="107"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWl-md-vmm">
-                                        <rect key="frame" x="0.0" y="92.5" width="343" height="89.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yao-eD-BQb">
+                                        <rect key="frame" x="0.0" y="107" width="343" height="106.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqZ-8B-qvm">
-                                        <rect key="frame" x="0.0" y="185.5" width="343" height="89"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-0x-PHG">
+                                        <rect key="frame" x="0.0" y="213.5" width="343" height="107"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Dwg-Q5-8xr">
-                                        <rect key="frame" x="0.0" y="267.5" width="343" height="130.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFK-65-rgf">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="130.5"/>
-                                                <state key="normal" title="Cerrar Sesión">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="LcA-GG-cym"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOT-bg-QFz">
+                                        <rect key="frame" x="0.0" y="320.5" width="343" height="106.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtA-t4-CL0">
+                                        <rect key="frame" x="0.0" y="427" width="343" height="107"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
+                                        <state key="normal" title="Cerrar Sesión">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-Ob-QfZ">
-                                <rect key="frame" x="16" y="151" width="343" height="34"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Mi perfil">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="ChalkboardSE-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPj-fK-f3h">
-                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="FRd-d0-Asn"/>
-                                    <constraint firstAttribute="height" constant="44" id="SxA-CE-oTk"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="editar" id="RWl-Rg-siz"/>
-                                </items>
-                                <color key="barTintColor" red="0.75186455249999995" green="0.80780905489999999" blue="0.86764210460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1k-mM-Pef">
-                                <rect key="frame" x="16" y="90" width="343" height="35.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Bienvenido ">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="ChalkboardSE-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fsX-yA-mjw" firstAttribute="leading" secondItem="Nma-bC-cgY" secondAttribute="leading" constant="16" id="0Qn-gj-vr2"/>
-                            <constraint firstItem="q1k-mM-Pef" firstAttribute="leading" secondItem="Nma-bC-cgY" secondAttribute="leading" constant="16" id="36T-iu-zMZ"/>
-                            <constraint firstItem="DPj-fK-f3h" firstAttribute="trailing" secondItem="Nma-bC-cgY" secondAttribute="trailing" id="3ca-7M-XbR"/>
-                            <constraint firstItem="fsX-yA-mjw" firstAttribute="top" secondItem="tZQ-Ob-QfZ" secondAttribute="bottom" constant="15" id="ACb-rV-hHA"/>
-                            <constraint firstItem="tZQ-Ob-QfZ" firstAttribute="leading" secondItem="Nma-bC-cgY" secondAttribute="leading" constant="16" id="J4e-j8-MfD"/>
-                            <constraint firstItem="DPj-fK-f3h" firstAttribute="leading" secondItem="Nma-bC-cgY" secondAttribute="leading" id="L3R-Eq-jSy"/>
-                            <constraint firstItem="tZQ-Ob-QfZ" firstAttribute="top" secondItem="q1k-mM-Pef" secondAttribute="bottom" constant="26" id="Lk5-0y-dZi"/>
-                            <constraint firstItem="DPj-fK-f3h" firstAttribute="top" secondItem="j4g-RG-BbW" secondAttribute="topMargin" constant="15" id="M6p-Pz-Z7G"/>
-                            <constraint firstItem="Nma-bC-cgY" firstAttribute="trailing" secondItem="tZQ-Ob-QfZ" secondAttribute="trailing" constant="16" id="O8j-9g-aD8"/>
-                            <constraint firstItem="Nma-bC-cgY" firstAttribute="trailing" secondItem="fsX-yA-mjw" secondAttribute="trailing" constant="16" id="UIV-kK-05L"/>
-                            <constraint firstItem="Nma-bC-cgY" firstAttribute="trailing" secondItem="q1k-mM-Pef" secondAttribute="trailing" constant="16" id="ZkK-wY-yrD"/>
-                            <constraint firstItem="Nma-bC-cgY" firstAttribute="bottom" secondItem="fsX-yA-mjw" secondAttribute="bottom" constant="20" id="p5Y-a3-fgB"/>
-                            <constraint firstItem="q1k-mM-Pef" firstAttribute="top" secondItem="DPj-fK-f3h" secondAttribute="bottom" constant="11" id="uNK-La-P3X"/>
+                            <constraint firstItem="Ri5-6I-2mT" firstAttribute="top" secondItem="Nma-bC-cgY" secondAttribute="top" id="CLS-ce-r1V"/>
+                            <constraint firstItem="Nma-bC-cgY" firstAttribute="trailing" secondItem="Ri5-6I-2mT" secondAttribute="trailing" constant="16" id="TPY-0n-xLU"/>
+                            <constraint firstItem="Ri5-6I-2mT" firstAttribute="leading" secondItem="Nma-bC-cgY" secondAttribute="leading" constant="16" id="TwW-Cy-ZRM"/>
+                            <constraint firstItem="Nma-bC-cgY" firstAttribute="bottom" secondItem="Ri5-6I-2mT" secondAttribute="bottom" constant="20" id="jmp-41-jlQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nma-bC-cgY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi Perfil" image="user" id="8a3-Ni-nzC"/>
-                    <connections>
-                        <outlet property="apellidoTf" destination="kWl-md-vmm" id="Ln1-bj-H8X"/>
-                        <outlet property="email" destination="oqZ-8B-qvm" id="18N-1f-PZW"/>
-                        <outlet property="nombreLabel" destination="pDA-WX-gRx" id="yEj-0I-fdv"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Mi Perfil" id="MEb-ce-eLc">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="zjM-VE-4PP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eP1-VB-N0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="836"/>
+            <point key="canvasLocation" x="77.599999999999994" y="834.33283358320841"/>
         </scene>
         <!--Mi Perfil-->
         <scene sceneID="DWU-Be-dD6">
@@ -403,31 +320,32 @@
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQf-su-LXO">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="101.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="112"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-yH-jX2">
-                                        <rect key="frame" x="0.0" y="101.5" width="343" height="101.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="112" width="343" height="97.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjL-Ab-kcE">
-                                        <rect key="frame" x="0.0" y="203" width="343" height="101"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="209.5" width="343" height="97.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-jP-R1r">
-                                        <rect key="frame" x="0.0" y="304" width="343" height="101.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="307" width="343" height="97.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-bl-zdF">
-                                        <rect key="frame" x="0.0" y="405.5" width="343" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="404.5" width="343" height="149.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <state key="normal" title="Cerrar Sesión">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -558,101 +476,71 @@
                             <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sg2-RS-UWl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0R-Rk-q8V">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos del visitante" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0R-Rk-q8V">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Datos">
-                                                <attributes>
-                                                    <font key="NSFont" size="27" name="LucidaGrande"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" size="27" name="AlTarikh"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="del">
-                                                <attributes>
-                                                    <font key="NSFont" size="27" name="LucidaGrande"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" size="27" name="AlTarikh"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="visitante">
-                                                <attributes>
-                                                    <font key="NSFont" size="27" name="LucidaGrande"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="27"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReE-EQ-h0o">
-                                        <rect key="frame" x="0.0" y="36.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHW-UV-fpI">
-                                        <rect key="frame" x="0.0" y="61.5" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="62" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9x-d0-yQi">
-                                        <rect key="frame" x="0.0" y="96.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="95.5" width="375" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-YQ-1Um">
-                                        <rect key="frame" x="0.0" y="122" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="122.5" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Paterno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT8-cZ-cwx">
-                                        <rect key="frame" x="0.0" y="156.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="156" width="375" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDE-i7-XKw">
-                                        <rect key="frame" x="0.0" y="182" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="182.5" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Materno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOl-ss-oyp">
-                                        <rect key="frame" x="0.0" y="216.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="216" width="375" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10m-DK-b8S">
-                                        <rect key="frame" x="0.0" y="242" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="243" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ka2-b6-20n">
-                                        <rect key="frame" x="0.0" y="277" width="375" height="31"/>
+                                        <rect key="frame" x="0.0" y="276.5" width="375" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Va a traer carro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1As-M4-sSx">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="286.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="70V-KW-Y9f">
-                                                <rect key="frame" x="275" y="0.0" width="102" height="31"/>
+                                                <rect key="frame" x="286.5" y="0.0" width="90.5" height="31"/>
                                                 <connections>
                                                     <action selector="carroBool:" destination="dlO-Tf-sLb" eventType="valueChanged" id="TZX-nW-EMh"/>
                                                 </connections>
@@ -660,7 +548,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="fill" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQW-Pn-gyR">
-                                        <rect key="frame" x="0.0" y="308" width="375" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="307.5" width="375" height="0.0"/>
                                         <accessibility key="accessibilityConfiguration" hint="Placas">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -679,8 +567,8 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iN-4i-J7l">
-                                        <rect key="frame" x="0.0" y="312.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="311" width="375" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -735,21 +623,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6hW-gh-AmP">
                                 <rect key="frame" x="16" y="38" width="343" height="609"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-Mk-mss">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información del invitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-Mk-mss">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Información del invitado">
-                                                <attributes>
-                                                    <font key="NSFont" size="30" name="AnonymicePowerline-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="4"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-V7-lFg">
-                                        <rect key="frame" x="0.0" y="83.5" width="343" height="171"/>
+                                        <rect key="frame" x="0.0" y="80.5" width="343" height="171"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-rO-8Ko">
                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="171"/>
@@ -759,13 +641,13 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-9K-9xA">
                                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vN0-p4-Brw">
                                                         <rect key="frame" x="0.0" y="85.5" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -774,43 +656,45 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-6s-t5m">
-                                        <rect key="frame" x="0.0" y="303" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="297.5" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-04-ZtU">
-                                        <rect key="frame" x="0.0" y="372" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="366.5" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FC-fX-svb">
-                                        <rect key="frame" x="0.0" y="441" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="435.5" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-Yr-NzZ">
-                                        <rect key="frame" x="0.0" y="510" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="505" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-9c-2qj">
-                                        <rect key="frame" x="0.0" y="579" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="574" width="343" height="35"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGO-lf-Duz">
-                                                <rect key="frame" x="0.0" y="0.0" width="256.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="223.5" height="35"/>
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="19"/>
                                                 <state key="normal" title="Enviar por correo electronico"/>
                                                 <connections>
                                                     <action selector="sendMail:" destination="pJC-bH-mKN" eventType="touchUpInside" id="f3W-yS-eCR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-cq-q5p">
-                                                <rect key="frame" x="256.5" y="0.0" width="86.5" height="30"/>
+                                                <rect key="frame" x="223.5" y="0.0" width="119.5" height="35"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Abrir en...">
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="19"/>
+                                                <state key="normal" title="Compartir via...">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -875,21 +759,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-ta-Z4t">
                                 <rect key="frame" x="16" y="38" width="343" height="609"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-Sf-vPv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información del invitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-Sf-vPv">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Información del invitado">
-                                                <attributes>
-                                                    <font key="NSFont" size="30" name="AnonymicePowerline-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="4"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bjh-OC-8dC">
-                                        <rect key="frame" x="0.0" y="118" width="343" height="171"/>
+                                        <rect key="frame" x="0.0" y="116" width="343" height="171"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f16-qE-liH">
                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="171"/>
@@ -899,13 +777,13 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om0-9w-7HX">
                                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-58-PrE">
                                                         <rect key="frame" x="0.0" y="85.5" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -914,28 +792,30 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-RT-BYU">
-                                        <rect key="frame" x="0.0" y="372" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="368" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOp-rI-YMZ">
-                                        <rect key="frame" x="0.0" y="475.5" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="472.5" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OFb-KK-1rf">
-                                        <rect key="frame" x="0.0" y="579" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="577" width="343" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="576-FX-8J7">
-                                                <rect key="frame" x="0.0" y="0.0" width="256.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="32"/>
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
                                                 <state key="normal" title="Enviar por correo electronico"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8P-0b-Cna">
-                                                <rect key="frame" x="256.5" y="0.0" width="86.5" height="30"/>
+                                                <rect key="frame" x="224" y="0.0" width="119" height="32"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Abrir en...">
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                                <state key="normal" title="Compartir via...">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -968,7 +848,7 @@
             </objects>
             <point key="canvasLocation" x="-1492" y="-2546"/>
         </scene>
-        <!--Perfil Admin Controller-->
+        <!--MI Perfil-->
         <scene sceneID="vxK-Xb-HLb">
             <objects>
                 <viewController storyboardIdentifier="perfilAdmin" id="tgA-8m-rFw" customClass="perfilAdminController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -976,92 +856,261 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ec-G7-QBB">
-                                <rect key="frame" x="16" y="188.5" width="343" height="458.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HPs-gj-84S">
+                                <rect key="frame" x="16" y="64" width="343" height="540"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhU-eN-twu">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="102"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIenvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVR-4v-0XS">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="108"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txf-mW-R2t">
+                                        <rect key="frame" x="0.0" y="108" width="343" height="108"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVk-lb-6KU">
-                                        <rect key="frame" x="0.0" y="102.5" width="343" height="102.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t60-zo-cr2">
+                                        <rect key="frame" x="0.0" y="216" width="343" height="108"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTB-Rh-Gfj">
-                                        <rect key="frame" x="0.0" y="205.5" width="343" height="102"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-9E-ndA">
+                                        <rect key="frame" x="0.0" y="324" width="343" height="108"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="egQ-k9-IxP">
-                                        <rect key="frame" x="0.0" y="306.5" width="343" height="152"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybx-8a-iY9">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="152"/>
-                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="19"/>
-                                                <state key="normal" title="Administrar Condominio"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PO-cA-UoF">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="152"/>
-                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="19"/>
-                                                <state key="normal" title="Administrar residentes"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl6-b7-wnW">
+                                        <rect key="frame" x="0.0" y="432" width="343" height="108"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
+                                        <state key="normal" title="Cerrar Sesión">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi perfil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuK-OU-0j3">
-                                <rect key="frame" x="16" y="145.5" width="343" height="28"/>
-                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-xR-CLh">
-                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="9q8-mx-WOS"/>
-                                    <constraint firstAttribute="height" constant="44" id="LVZ-ae-5Pf"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="editar" id="JSl-No-5H6"/>
-                                </items>
-                                <color key="barTintColor" red="0.75186455249999995" green="0.80780905489999999" blue="0.86764210460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eop-sF-qXp">
-                                <rect key="frame" x="16" y="90" width="343" height="29.5"/>
-                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eop-sF-qXp" firstAttribute="top" secondItem="iCC-xR-CLh" secondAttribute="bottom" constant="11" id="00x-tf-OBc"/>
-                            <constraint firstItem="kuK-OU-0j3" firstAttribute="top" secondItem="eop-sF-qXp" secondAttribute="bottom" constant="26" id="AtN-2V-Atc"/>
-                            <constraint firstItem="2ec-G7-QBB" firstAttribute="top" secondItem="kuK-OU-0j3" secondAttribute="bottom" constant="15" id="GmV-Uu-jZG"/>
-                            <constraint firstItem="2ec-G7-QBB" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" constant="16" id="KJy-Iv-sC2"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="trailing" secondItem="kuK-OU-0j3" secondAttribute="trailing" constant="16" id="RZw-xk-Aao"/>
-                            <constraint firstItem="kuK-OU-0j3" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" constant="16" id="dov-el-fl4"/>
-                            <constraint firstItem="iCC-xR-CLh" firstAttribute="top" secondItem="ndh-gM-gvQ" secondAttribute="topMargin" constant="15" id="fOE-WM-ocw"/>
-                            <constraint firstItem="iCC-xR-CLh" firstAttribute="trailing" secondItem="GPJ-2O-eqF" secondAttribute="trailing" id="fwZ-eC-yQ4"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="trailing" secondItem="eop-sF-qXp" secondAttribute="trailing" constant="16" id="mJh-ar-j8t"/>
-                            <constraint firstItem="iCC-xR-CLh" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" id="nG7-Rr-QUc"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="trailing" secondItem="2ec-G7-QBB" secondAttribute="trailing" constant="16" id="nTU-eY-irO"/>
-                            <constraint firstItem="eop-sF-qXp" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" constant="16" id="va8-OI-2F3"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="bottom" secondItem="2ec-G7-QBB" secondAttribute="bottom" constant="20" id="xef-C8-0YG"/>
+                            <constraint firstItem="HPs-gj-84S" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" constant="16" id="9yY-eI-YI0"/>
+                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="bottom" secondItem="HPs-gj-84S" secondAttribute="bottom" constant="14" id="K3s-kk-x1u"/>
+                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="trailing" secondItem="HPs-gj-84S" secondAttribute="trailing" constant="16" id="bSw-63-Xgf"/>
+                            <constraint firstItem="HPs-gj-84S" firstAttribute="top" secondItem="GPJ-2O-eqF" secondAttribute="top" id="qso-td-8W0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GPJ-2O-eqF"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Mi Perfil" image="user" id="uN5-ac-vGf"/>
+                    <navigationItem key="navigationItem" title="MI Perfil" id="Qsa-zw-SxE">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="JFs-BF-9TL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwm-Sy-Den" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="835"/>
+            <point key="canvasLocation" x="1342" y="834"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8TH-PX-pD4">
+            <objects>
+                <tabBarController storyboardIdentifier="superPerfilAdmin" id="xrw-k1-dYy" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZMs-cY-oJU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Sna-MO-qbV" kind="relationship" relationship="viewControllers" id="lgt-My-74C"/>
+                        <segue destination="Qk9-Ck-i0S" kind="relationship" relationship="viewControllers" id="D1D-mm-ung"/>
+                        <segue destination="2Jf-Mm-tmB" kind="relationship" relationship="viewControllers" id="eAf-Ho-alQ"/>
+                        <segue destination="YdH-L9-DsL" kind="relationship" relationship="viewControllers" id="ZRx-pa-xdE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAk-lW-9eO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="920"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="yLZ-T6-HEO">
+            <objects>
+                <tableViewController id="a7J-hj-o6U" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AMZ-xr-UAL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Krh-mQ-ihn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Krh-mQ-ihn" id="El0-f3-z5J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="a7J-hj-o6U" id="EEE-bN-p1h"/>
+                            <outlet property="delegate" destination="a7J-hj-o6U" id="b60-Fa-u9G"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="zDP-v0-NGx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfO-wG-klc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2396" y="1596"/>
+        </scene>
+        <!--Residentes-->
+        <scene sceneID="3JP-Ha-wWc">
+            <objects>
+                <navigationController id="Qk9-Ck-i0S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Residentes" image="user" id="rdN-1Z-mIU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oDK-PK-MKY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="n3b-8j-t53" kind="relationship" relationship="rootViewController" id="DFO-cp-2Jj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B04-Lh-ZCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3868" y="1567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ekM-l6-y5g">
+            <objects>
+                <viewController id="n3b-8j-t53" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTB-v1-jum">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="tOh-Zu-fXx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dd8-1N-lB1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gno-oS-EPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3153" y="1673"/>
+        </scene>
+        <!--Condominios-->
+        <scene sceneID="QDm-zS-ZhH">
+            <objects>
+                <navigationController id="YdH-L9-DsL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Condominios" image="user" id="asg-gO-4Zs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AaS-C8-aUb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="a7J-hj-o6U" kind="relationship" relationship="rootViewController" id="soW-Wy-nEE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kM2-8k-d3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444" y="1596"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="QX4-rj-oxI">
+            <objects>
+                <tableViewController id="UQR-br-BsK" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g5h-5f-2p7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OBL-ng-I4T">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBL-ng-I4T" id="yhH-gx-qm3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UQR-br-BsK" id="5fp-VB-gq6"/>
+                            <outlet property="delegate" destination="UQR-br-BsK" id="uAD-XH-MHS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="FAX-ng-70Q"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtJ-Nx-Q3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3566" y="886"/>
+        </scene>
+        <!--Vigilante-->
+        <scene sceneID="pwp-vi-Tmm">
+            <objects>
+                <navigationController id="2Jf-Mm-tmB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vigilante" image="user" id="wxO-oK-wYn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JPt-J3-0NH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UQR-br-BsK" kind="relationship" relationship="rootViewController" id="cC1-10-T2m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHD-db-XPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2614" y="886"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="a1i-DT-kGX">
+            <objects>
+                <navigationController id="RZg-6D-aTp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="PXw-Ih-WYs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BlY-mD-ZMg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fay-If-vGT" kind="relationship" relationship="rootViewController" id="fdz-si-GA5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWX-ii-Vur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-670" y="1567"/>
+        </scene>
+        <!--Mi Perfil-->
+        <scene sceneID="feZ-rR-9ff">
+            <objects>
+                <navigationController id="Sna-MO-qbV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mi Perfil" image="user" id="nX9-Go-Hyn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8UK-dS-UuY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tgA-8m-rFw" kind="relationship" relationship="rootViewController" id="aFW-ot-YVK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-wB-ucv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="599" y="1522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jkD-lA-hpk">
@@ -1070,6 +1119,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1V-a1-iIh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="RAN-SM-jKd" kind="relationship" relationship="rootViewController" id="FbI-jj-IVs"/>
@@ -1148,7 +1201,7 @@
                                         <rect key="frame" x="0.0" y="553" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -1164,11 +1217,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registrar Administrador" leftItemsSupplementBackButton="YES" id="jZU-WM-uWH">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="NFv-ef-oWf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancelar:" destination="RAN-SM-jKd" id="4DI-vJ-Ull"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="7zc-Zx-e8g">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="guardar:" destination="RAN-SM-jKd" id="i6Y-5e-sTI"/>
                             </connections>
@@ -1305,7 +1360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWk-jy-DB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950" y="1662"/>
+            <point key="canvasLocation" x="3566" y="184"/>
         </scene>
     </scenes>
     <resources>
@@ -1314,7 +1369,4 @@
         <image name="visitas" width="32" height="32"/>
         <image name="visitme" width="1280" height="351"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Pzj-Nc-cZo"/>
-    </inferredMetricsTieBreakers>
 </document>
