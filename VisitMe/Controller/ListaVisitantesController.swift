@@ -63,8 +63,7 @@ class ListaVisitantesController: UITableViewController
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            lista?.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            showDeleteAlert(indexPath: indexPath)
         }
     }
     
@@ -89,5 +88,25 @@ class ListaVisitantesController: UITableViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destino = segue.destination as! InvitadoController
         destino.usuario = self.residente
+    }
+    
+    func showDeleteAlert(indexPath: IndexPath){
+        let alert = UIAlertController(title: "Confirmar", message: "¿Estás segur@ que deseas eliminar esta invitación?", preferredStyle: .alert)
+        
+        
+        let eliminar  = UIAlertAction(title: "Eliminar", style: .default, handler: { (action) -> Void in
+            let invitacion = self.lista?.remove(at: indexPath.row)
+            AppDelegate.dbManager.borrarInvitacion(codigoSeleccionado: (invitacion?.folio)!)
+            self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        })
+        
+        let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action) -> Void in
+        })
+        
+        alert.addAction(eliminar)
+        alert.addAction(cancelar)
+        present(alert, animated: true, completion: nil)
+        
+        
     }
 }

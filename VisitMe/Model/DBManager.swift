@@ -78,13 +78,13 @@ class DBManager{
     }
     
     func borrarInvitacion(codigoSeleccionado: String){
-        let condicionBusqueda: String = "CODIGO=" + codigoSeleccionado
+        let condicionBusqueda: String = "CODIGO= '\(codigoSeleccionado)'"
         let query = OHMySQLQueryRequestFactory.delete("INVITACION", condition: condicionBusqueda)
         try? context?.execute(query)
     }
     
     func borrarRegistro(tabla: String, ID: String){
-        let condicionBusqueda: String = "ID=" + ID
+        let condicionBusqueda: String = "ID= '\(ID)'"
         let query = OHMySQLQueryRequestFactory.delete(tabla, condition: condicionBusqueda)
         try? context?.execute(query)
     }
