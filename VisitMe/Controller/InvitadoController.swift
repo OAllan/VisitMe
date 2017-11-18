@@ -135,7 +135,7 @@ class InvitadoController: UIViewController, UITextFieldDelegate{
         let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
             let navigationInvitados = self.navigationController!
             self.navigationController?.popViewController(animated: true)
-            
+            self.invitadoRegistradoController?.residente = true
             self.invitadoRegistradoController?.cargarInformacion()
             navigationInvitados.pushViewController(self.invitadoRegistradoController!, animated: true)
             

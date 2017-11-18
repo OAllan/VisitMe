@@ -8,6 +8,6 @@
 
 import UIKit
 
-class perfilAdminController: UIViewController{
+class PerfilAdminController: UIViewController{
     
 }

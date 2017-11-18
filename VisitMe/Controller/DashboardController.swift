@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ResidenteController: UIViewController{
+class DashboardController: UIViewController{
     
     @IBOutlet weak var nombreLabel: UILabel!
     var residente: Usuario? = nil
-    
+    var type: String?
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var apellidoTf: UILabel!
     

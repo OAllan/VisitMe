@@ -11,19 +11,26 @@ import MessageUI
 import QRCode
 
 class InvitadoRegistradoController: UIViewController, MFMailComposeViewControllerDelegate{
+    @IBOutlet weak var botonesResidente: UIStackView!
     
+    @IBOutlet weak var botonesVigilante: UIStackView!
     @IBOutlet weak var imagenQROutlet: UIImageView!
     var imagenQR: UIImage?
     var documentInteractionController = UIDocumentInteractionController()
     var invitacion: Invitacion?
+    var residente : Bool?
     
+    @IBOutlet weak var estado: UILabel!
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var apellidos: UILabel!
     @IBOutlet weak var fecha: UILabel!
     
+    @IBOutlet weak var placas: UILabel!
+    @IBOutlet weak var carro: UILabel!
     @IBOutlet weak var email: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func sendMail(_ sender: Any) {
@@ -68,7 +75,36 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
         apellidos.text = "\((invitacion?.apellidoPaterno)!) \((invitacion?.apellidoMaterno)!)"
         email.text = invitacion?.getEmail()
         fecha.text = "Fecha de visita: \((parsearFecha())!)"
+        if invitacion?.placas != "<null>"{
+            carro.text = "Carro: SI"
+            placas.text = "Placas: \((invitacion?.placas)!)"
+        }
+        else{
+            carro.text = "Carro: NO"
+            placas.text = "Placas: N/A"
+        }
         generarCodigoQR()
+        let activa: String?
+        if (invitacion?.esExpirada)!{
+            activa = "Expirada"
+            estado.textColor = .red
+        }
+        else {
+            activa = "Activa"
+            estado.textColor = .green
+        }
+        estado.text = "Estado: \(activa!)"
+        botonesVigilante.isHidden = residente!
+        botonesResidente.isHidden = !(residente!)
+    }
+    
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParentViewController && !residente! {
+            let scannerController  = navigationController?.viewControllers[0] as! QRScannerController
+            scannerController.reset()
+        }
     }
     
     func parsearFecha() -> String?{
@@ -103,7 +139,7 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
             mes = ""
         }
         
-        return "\(componentes![2]) de \(mes) del \(componentes![1])"
+        return "\(componentes![2]) de \(mes) del \(componentes![0])"
     }
     
     
@@ -132,7 +168,7 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
     }
     
     func generarCodigoQR(){
-        let imageQR = QRCode((invitacion?.idUsuario)!)
+        let imageQR = QRCode((invitacion?.folio)!)
         imagenQR = imageQR?.image
         imagenQROutlet.image = imagenQR
     }

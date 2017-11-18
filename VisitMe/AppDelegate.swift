@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         AppDelegate.dbManager.conectar()
-        
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name: "Champagne&Limousines-Bold", size: 25)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         return true
     }
 

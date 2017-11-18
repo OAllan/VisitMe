@@ -20,8 +20,9 @@ class QRScannerController: BarcodeScannerController, BarcodeScannerCodeDelegate,
     
     
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        print("Encontrado")
+        print(code)
         buscarInvitacion(code: code)
+        
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
@@ -34,10 +35,16 @@ class QRScannerController: BarcodeScannerController, BarcodeScannerCodeDelegate,
     
     func buscarInvitacion(code: String){
         if let invitacion = AppDelegate.dbManager.buscarCodigo(codigo: code){
-            print("Codigo válido")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let pantallaInvitacion = storyBoard.instantiateViewController(withIdentifier: "registrado") as! InvitadoRegistradoController
+            pantallaInvitacion.loadViewIfNeeded()
+            pantallaInvitacion.invitacion = invitacion
+            pantallaInvitacion.residente = false
+            pantallaInvitacion.cargarInformacion()
+            navigationController?.pushViewController(pantallaInvitacion, animated: true)
+            
         }
         else{
-            print("No encontrado")
             showAlert()
         }
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class adminController: UIViewController{
+class AdminController: UIViewController{
     
     
     @IBOutlet weak var nombre: UITextField!
@@ -17,13 +17,13 @@ class adminController: UIViewController{
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var contraseña: UITextField!
     
-    var registrarCondo: condoController?
+    var registrarCondo: CondoController?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboardGuardar: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        registrarCondo = storyboardGuardar.instantiateViewController(withIdentifier: "pantallaCondo") as! condoController
+        registrarCondo = storyboardGuardar.instantiateViewController(withIdentifier: "pantallaCondo") as! CondoController
         
     }
     

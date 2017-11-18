@@ -16,6 +16,8 @@ class ListaVisitantesController: UITableViewController
     var refresher: UIRefreshControl!
     var pantallaInvitacion: InvitadoRegistradoController?
 
+    @IBOutlet weak var botonEditar: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lista = AppDelegate.dbManager.cargarVisitantes(residenteId: "1")
@@ -53,7 +55,9 @@ class ListaVisitantesController: UITableViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         pantallaInvitacion?.loadViewIfNeeded()
         pantallaInvitacion?.invitacion = lista?[indexPath.row]
+       pantallaInvitacion?.residente = true
         pantallaInvitacion?.cargarInformacion()
+        
         navigationController?.pushViewController(pantallaInvitacion!, animated: true)
     }
     
@@ -66,6 +70,13 @@ class ListaVisitantesController: UITableViewController
     
     @IBAction func editar(_ sender: Any) {
         self.tableView.isEditing = !self.tableView.isEditing
+        
+        if self.tableView.isEditing {
+            botonEditar.title = "Listo"
+        }
+        else {
+            botonEditar.title = "Editar"
+        }
     }
     
     @objc func actualizarDatos(){

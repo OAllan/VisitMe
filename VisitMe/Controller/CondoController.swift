@@ -8,7 +8,7 @@
 
 import UIKit
 
-class condoController: UIViewController{
+class CondoController: UIViewController{
     
     
     @IBOutlet weak var calle: UITextField!
@@ -18,12 +18,12 @@ class condoController: UIViewController{
     @IBOutlet weak var estado: UITextField!
     @IBOutlet weak var delegacion: UITextField!
     
-    var perfilAdmin: perfilAdminController?
+    var perfilAdmin: PerfilAdminController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyBoardGuardar: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        perfilAdmin = storyBoardGuardar.instantiateViewController(withIdentifier: "perfilAdmin") as! perfilAdminController
+        perfilAdmin = storyBoardGuardar.instantiateViewController(withIdentifier: "perfilAdmin") as! PerfilAdminController
     }
     
     @IBAction func guardar(_ sender: Any) {
@@ -72,7 +72,7 @@ class condoController: UIViewController{
     
     @IBAction func cancelar(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let pantallaAdmin = storyBoard.instantiateViewController(withIdentifier: "registrarAdmin") as! adminController
+        let pantallaAdmin = storyBoard.instantiateViewController(withIdentifier: "registrarAdmin") as! AdminController
         
         present(pantallaAdmin, animated: true, completion: nil)
     }

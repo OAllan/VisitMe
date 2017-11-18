@@ -30,7 +30,7 @@
                                 <rect key="frame" x="16" y="512" width="335" height="109"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqZ-Lr-D5a">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="62"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="65"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
                                         <state key="normal" title="Iniciar Sesión">
@@ -41,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-Ou-tuE">
-                                        <rect key="frame" x="0.0" y="62" width="335" height="47"/>
+                                        <rect key="frame" x="0.0" y="65" width="335" height="44"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
                                         <state key="normal" title="Administrador">
                                             <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="72"/>
+            <point key="canvasLocation" x="-690" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1lp-UH-VA6">
@@ -108,70 +108,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FtY-ga-q7Y">
-                                <rect key="frame" x="27" y="91" width="320" height="485"/>
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de usuario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAZ-Xz-M3p">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Mw-zBQ">
-                                        <rect key="frame" x="0.0" y="41" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="46.5" width="343" height="216"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Xyv-qC-efD" id="fc2-88-bWF"/>
                                             <outlet property="delegate" destination="Xyv-qC-efD" id="c0A-it-cOt"/>
                                         </connections>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo electrónico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5j-oa-J1B">
-                                        <rect key="frame" x="0.0" y="271" width="320" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="283" width="343" height="26.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-qB-QKA">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="329.5" width="343" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" smartDashesType="yes" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-Qi-6yW">
-                                        <rect key="frame" x="0.0" y="356" width="320" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="380" width="343" height="26.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcw-UF-CId">
-                                        <rect key="frame" x="0.0" y="397" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="426.5" width="343" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wef-ld-8gF">
-                                        <rect key="frame" x="0.0" y="441" width="320" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.29246040239999999" colorSpace="deviceWhite"/>
+                                        <rect key="frame" x="0.0" y="477" width="343" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
                                         <state key="normal" title="Iniciar Sesión">
-                                            <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="iniciarSesion:" destination="Xyv-qC-efD" eventType="touchUpInside" id="2dE-Px-hX4"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wks-pH-06B">
+                                        <rect key="frame" x="0.0" y="541" width="343" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Olvidé mi contraseña">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XtW-Rm-adZ" firstAttribute="bottom" secondItem="FtY-ga-q7Y" secondAttribute="bottom" constant="91" id="7kX-tx-OMg"/>
-                            <constraint firstItem="FtY-ga-q7Y" firstAttribute="top" secondItem="XtW-Rm-adZ" secondAttribute="top" constant="27" id="lot-Qk-lxH"/>
-                            <constraint firstItem="FtY-ga-q7Y" firstAttribute="leading" secondItem="XtW-Rm-adZ" secondAttribute="leading" constant="27" id="zkx-Mp-8EV"/>
+                            <constraint firstItem="XtW-Rm-adZ" firstAttribute="bottom" secondItem="FtY-ga-q7Y" secondAttribute="bottom" constant="16" id="7w8-Mh-ZCj"/>
+                            <constraint firstItem="FtY-ga-q7Y" firstAttribute="top" secondItem="XtW-Rm-adZ" secondAttribute="top" constant="16" id="eOn-Bb-Oc1"/>
+                            <constraint firstItem="FtY-ga-q7Y" firstAttribute="leading" secondItem="XtW-Rm-adZ" secondAttribute="leading" constant="16" id="zKI-1C-vCc"/>
+                            <constraint firstItem="XtW-Rm-adZ" firstAttribute="trailing" secondItem="FtY-ga-q7Y" secondAttribute="trailing" constant="16" id="zez-Pj-a3T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XtW-Rm-adZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Iniciar Sesion" id="NFV-dg-9cR">
-                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="5lV-Cm-3SH">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" style="done" id="5lV-Cm-3SH">
+                            <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="Pzj-Nc-cZo"/>
                             </connections>
@@ -197,10 +205,30 @@
                         <viewLayoutGuide key="safeArea" id="GPb-2N-Jyf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Escanear Código" image="info" id="tMc-cW-Cru"/>
+                    <navigationItem key="navigationItem" title="Escanear Código" id="rLN-Cw-rAh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWU-9w-UeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1937" y="774"/>
+        </scene>
+        <!--Escaner Código-->
+        <scene sceneID="B2X-b6-c2A">
+            <objects>
+                <navigationController id="8B7-Zz-zyr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Escaner Código" image="info.png" id="LTt-B8-4IT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mlW-WI-fVm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="69E-1Z-Rq8" kind="relationship" relationship="rootViewController" id="nlQ-ER-gMD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crJ-Wx-ei4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2065" y="1522"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iO6-cC-e3x">
@@ -215,7 +243,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="RZg-6D-aTp" kind="relationship" relationship="viewControllers" id="ioh-S2-yQ0"/>
-                        <segue destination="69E-1Z-Rq8" kind="relationship" relationship="viewControllers" id="9FC-w5-nEL"/>
+                        <segue destination="8B7-Zz-zyr" kind="relationship" relationship="viewControllers" id="xh7-dJ-var"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7i-IB-rZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,10 +310,15 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="apellidoTf" destination="ueP-0x-PHG" id="9au-7A-gcf"/>
+                        <outlet property="email" destination="gOT-bg-QFz" id="9z0-ye-mGs"/>
+                        <outlet property="nombreLabel" destination="Yao-eD-BQb" id="Fmm-ap-B7B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eP1-VB-N0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.599999999999994" y="834.33283358320841"/>
+            <point key="canvasLocation" x="-76" y="803"/>
         </scene>
         <!--Mi Perfil-->
         <scene sceneID="DWU-Be-dD6">
@@ -311,40 +344,47 @@
         <!--Mi perfil-->
         <scene sceneID="lwq-2F-uei">
             <objects>
-                <viewController id="w6d-gb-dmT" customClass="ResidenteController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w6d-gb-dmT" customClass="DashboardController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zie-FK-73a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="eXH-uG-2eN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eXH-uG-2eN">
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQf-su-LXO">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="112"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-yH-jX2">
-                                        <rect key="frame" x="0.0" y="112" width="343" height="97.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-yH-jX2">
+                                        <rect key="frame" x="0.0" y="93.5" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjL-Ab-kcE">
-                                        <rect key="frame" x="0.0" y="209.5" width="343" height="97.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjL-Ab-kcE">
+                                        <rect key="frame" x="0.0" y="182.5" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-jP-R1r">
-                                        <rect key="frame" x="0.0" y="307" width="343" height="97.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-jP-R1r">
+                                        <rect key="frame" x="0.0" y="272" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-Bo-JoM">
+                                        <rect key="frame" x="0.0" y="361" width="343" height="92"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-bl-zdF">
-                                        <rect key="frame" x="0.0" y="404.5" width="343" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="522" width="343" height="32"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <state key="normal" title="Cerrar Sesión">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -422,7 +462,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Mis Visitas" image="visitas" selectedImage="visitas" id="hYr-kU-MjX"/>
                     <navigationItem key="navigationItem" title="Mis visitas" id="JVi-xF-dFH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="WUt-1y-PuY">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="WUt-1y-PuY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editar:" destination="M34-xe-pdZ" id="Fwd-S2-KyM"/>
@@ -435,6 +475,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="botonEditar" destination="WUt-1y-PuY" id="P9a-vQ-Jbr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXT-g2-fwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,7 +535,7 @@
                                         <rect key="frame" x="0.0" y="59" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9x-d0-yQi">
                                         <rect key="frame" x="0.0" y="94.5" width="375" height="20"/>
@@ -504,7 +547,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Paterno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT8-cZ-cwx">
                                         <rect key="frame" x="0.0" y="155" width="375" height="20"/>
@@ -516,7 +559,7 @@
                                         <rect key="frame" x="0.0" y="180.5" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Materno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOl-ss-oyp">
                                         <rect key="frame" x="0.0" y="215.5" width="375" height="20"/>
@@ -528,7 +571,7 @@
                                         <rect key="frame" x="0.0" y="241" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ka2-b6-20n">
                                         <rect key="frame" x="0.0" y="276.5" width="375" height="31"/>
@@ -612,7 +655,7 @@
             </objects>
             <point key="canvasLocation" x="-2442.4000000000001" y="-1130.2848575712144"/>
         </scene>
-        <!--Invitado Registrado Controller-->
+        <!--Detalle-->
         <scene sceneID="U6R-ap-7NR">
             <objects>
                 <viewController storyboardIdentifier="registrado" id="pJC-bH-mKN" customClass="InvitadoRegistradoController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -631,7 +674,7 @@
                                         <size key="shadowOffset" width="0.0" height="4"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-V7-lFg">
-                                        <rect key="frame" x="0.0" y="81" width="343" height="171"/>
+                                        <rect key="frame" x="0.0" y="70" width="343" height="171"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-rO-8Ko">
                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="171"/>
@@ -639,14 +682,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HEd-FZ-KOt">
                                                 <rect key="frame" x="171.5" y="0.0" width="171.5" height="171"/>
                                                 <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-HP-riN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="57"/>
+                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-9K-9xA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="85.5"/>
+                                                        <rect key="frame" x="0.0" y="57" width="171.5" height="57"/>
                                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vN0-p4-Brw">
-                                                        <rect key="frame" x="0.0" y="85.5" width="171.5" height="85.5"/>
+                                                        <rect key="frame" x="0.0" y="114" width="171.5" height="57"/>
                                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -656,31 +705,31 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-6s-t5m">
-                                        <rect key="frame" x="0.0" y="301.5" width="343" height="20"/>
+                                        <rect key="frame" x="0.0" y="279" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-04-ZtU">
-                                        <rect key="frame" x="0.0" y="370.5" width="343" height="20"/>
+                                        <rect key="frame" x="0.0" y="337" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FC-fX-svb">
-                                        <rect key="frame" x="0.0" y="439.5" width="343" height="20"/>
+                                        <rect key="frame" x="0.0" y="395" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-Yr-NzZ">
-                                        <rect key="frame" x="0.0" y="509" width="343" height="20"/>
+                                        <rect key="frame" x="0.0" y="453" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-9c-2qj">
-                                        <rect key="frame" x="0.0" y="578" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="511" width="343" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGO-lf-Duz">
                                                 <rect key="frame" x="0.0" y="0.0" width="229.5" height="31"/>
@@ -703,6 +752,24 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vx8-Vf-FB6">
+                                        <rect key="frame" x="0.0" y="580" width="343" height="29"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHl-ku-v8c">
+                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="29"/>
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                                <state key="normal" title="Registrar Entrada"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXG-eX-bCZ">
+                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="29"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                                <state key="normal" title="Registrar Salida">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -715,12 +782,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vxT-9c-FGs"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalle" id="pDj-de-TnS"/>
                     <connections>
                         <outlet property="apellidos" destination="vN0-p4-Brw" id="5cJ-kX-kdU"/>
+                        <outlet property="botonesResidente" destination="QA7-9c-2qj" id="cby-et-L0t"/>
+                        <outlet property="botonesVigilante" destination="vx8-Vf-FB6" id="UED-F8-BAE"/>
+                        <outlet property="carro" destination="FXP-04-ZtU" id="Dj3-gk-EJq"/>
                         <outlet property="email" destination="UYS-6s-t5m" id="1h8-IE-Yux"/>
+                        <outlet property="estado" destination="UPf-HP-riN" id="kbu-R3-1ej"/>
                         <outlet property="fecha" destination="yPI-Yr-NzZ" id="JwO-3M-NaI"/>
                         <outlet property="imagenQROutlet" destination="aq5-rO-8Ko" id="TJ3-Gf-ybR"/>
                         <outlet property="nombre" destination="vrq-9K-9xA" id="N4V-SZ-QGX"/>
+                        <outlet property="placas" destination="6FC-fX-svb" id="zIQ-K6-EiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exo-ib-JRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,171 +821,6 @@
             </objects>
             <point key="canvasLocation" x="-1001" y="-651"/>
         </scene>
-        <!--Invitado Registrado Controller-->
-        <scene sceneID="MV4-RJ-0ef">
-            <objects>
-                <viewController id="TSs-hz-mWD" customClass="InvitadoRegistradoController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FzX-D1-mFd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-ta-Z4t">
-                                <rect key="frame" x="16" y="38" width="343" height="609"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información del invitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-Sf-vPv">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="4"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bjh-OC-8dC">
-                                        <rect key="frame" x="0.0" y="116.5" width="343" height="171"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f16-qE-liH">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="171"/>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-HM-Ofn">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="171"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om0-9w-7HX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-58-PrE">
-                                                        <rect key="frame" x="0.0" y="85.5" width="171.5" height="85.5"/>
-                                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-RT-BYU">
-                                        <rect key="frame" x="0.0" y="371.5" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOp-rI-YMZ">
-                                        <rect key="frame" x="0.0" y="476" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OFb-KK-1rf">
-                                        <rect key="frame" x="0.0" y="580" width="343" height="29"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="576-FX-8J7">
-                                                <rect key="frame" x="0.0" y="0.0" width="229.5" height="29"/>
-                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                                <state key="normal" title="Enviar por correo electronico"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8P-0b-Cna">
-                                                <rect key="frame" x="229.5" y="0.0" width="113.5" height="29"/>
-                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                                <state key="normal" title="Compartir via...">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="enviarPorWhatsapp:" destination="TSs-hz-mWD" eventType="touchUpInside" id="fG4-2M-s31"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ywh-ta-Z4t" firstAttribute="leading" secondItem="DBW-w7-Sob" secondAttribute="leading" constant="16" id="3CO-N5-hpa"/>
-                            <constraint firstItem="DBW-w7-Sob" firstAttribute="bottom" secondItem="Ywh-ta-Z4t" secondAttribute="bottom" constant="20" id="8Rq-jj-5I5"/>
-                            <constraint firstItem="Ywh-ta-Z4t" firstAttribute="top" secondItem="DBW-w7-Sob" secondAttribute="top" constant="18" id="biH-Tn-eCI"/>
-                            <constraint firstItem="DBW-w7-Sob" firstAttribute="trailing" secondItem="Ywh-ta-Z4t" secondAttribute="trailing" constant="16" id="lC9-0X-GVs"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="DBW-w7-Sob"/>
-                    </view>
-                    <connections>
-                        <outlet property="apellidos" destination="bRt-58-PrE" id="LRw-8y-hro"/>
-                        <outlet property="email" destination="2tR-RT-BYU" id="7eA-Dc-fft"/>
-                        <outlet property="fecha" destination="DOp-rI-YMZ" id="BvB-dG-w4E"/>
-                        <outlet property="imagenQROutlet" destination="f16-qE-liH" id="EWK-3x-n5Y"/>
-                        <outlet property="nombre" destination="om0-9w-7HX" id="kfh-lu-o9b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pG1-gA-aDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1492" y="-2546"/>
-        </scene>
-        <!--MI Perfil-->
-        <scene sceneID="vxK-Xb-HLb">
-            <objects>
-                <viewController storyboardIdentifier="perfilAdmin" id="tgA-8m-rFw" customClass="perfilAdminController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ndh-gM-gvQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HPs-gj-84S">
-                                <rect key="frame" x="16" y="64" width="343" height="540"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIenvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVR-4v-0XS">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="108"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txf-mW-R2t">
-                                        <rect key="frame" x="0.0" y="108" width="343" height="108"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t60-zo-cr2">
-                                        <rect key="frame" x="0.0" y="216" width="343" height="108"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-9E-ndA">
-                                        <rect key="frame" x="0.0" y="324" width="343" height="108"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl6-b7-wnW">
-                                        <rect key="frame" x="0.0" y="432" width="343" height="108"/>
-                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
-                                        <state key="normal" title="Cerrar Sesión">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HPs-gj-84S" firstAttribute="leading" secondItem="GPJ-2O-eqF" secondAttribute="leading" constant="16" id="9yY-eI-YI0"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="bottom" secondItem="HPs-gj-84S" secondAttribute="bottom" constant="14" id="K3s-kk-x1u"/>
-                            <constraint firstItem="GPJ-2O-eqF" firstAttribute="trailing" secondItem="HPs-gj-84S" secondAttribute="trailing" constant="16" id="bSw-63-Xgf"/>
-                            <constraint firstItem="HPs-gj-84S" firstAttribute="top" secondItem="GPJ-2O-eqF" secondAttribute="top" id="qso-td-8W0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="GPJ-2O-eqF"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Mi Perfil" image="user" id="uN5-ac-vGf"/>
-                    <navigationItem key="navigationItem" title="MI Perfil" id="Qsa-zw-SxE">
-                        <barButtonItem key="leftBarButtonItem" title="Editar" id="JFs-BF-9TL">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iwm-Sy-Den" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1342" y="834"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8TH-PX-pD4">
             <objects>
@@ -932,7 +840,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAk-lW-9eO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="920"/>
+            <point key="canvasLocation" x="1708" y="803"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="yLZ-T6-HEO">
@@ -963,11 +871,11 @@
             </objects>
             <point key="canvasLocation" x="2396" y="1596"/>
         </scene>
-        <!--Residentes-->
+        <!--Condominio-->
         <scene sceneID="3JP-Ha-wWc">
             <objects>
                 <navigationController id="Qk9-Ck-i0S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Residentes" image="user" id="rdN-1Z-mIU"/>
+                    <tabBarItem key="tabBarItem" title="Condominio" image="62362" id="rdN-1Z-mIU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oDK-PK-MKY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -996,11 +904,11 @@
             </objects>
             <point key="canvasLocation" x="3153" y="1673"/>
         </scene>
-        <!--Condominios-->
+        <!--Residentes-->
         <scene sceneID="QDm-zS-ZhH">
             <objects>
                 <navigationController id="YdH-L9-DsL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Condominios" image="user" id="asg-gO-4Zs"/>
+                    <tabBarItem key="tabBarItem" title="Residentes" image="10415" id="asg-gO-4Zs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AaS-C8-aUb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1049,11 +957,11 @@
             </objects>
             <point key="canvasLocation" x="3566" y="886"/>
         </scene>
-        <!--Vigilante-->
+        <!--Vigilantes-->
         <scene sceneID="pwp-vi-Tmm">
             <objects>
                 <navigationController id="2Jf-Mm-tmB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Vigilante" image="user" id="wxO-oK-wYn"/>
+                    <tabBarItem key="tabBarItem" title="Vigilantes" image="police_3542" id="wxO-oK-wYn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JPt-J3-0NH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1070,11 +978,11 @@
             </objects>
             <point key="canvasLocation" x="2614" y="886"/>
         </scene>
-        <!--Item-->
+        <!--Mi perfil-->
         <scene sceneID="a1i-DT-kGX">
             <objects>
                 <navigationController id="RZg-6D-aTp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="PXw-Ih-WYs"/>
+                    <tabBarItem key="tabBarItem" title="Mi perfil" image="user" id="PXw-Ih-WYs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BlY-mD-ZMg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1105,12 +1013,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="tgA-8m-rFw" kind="relationship" relationship="rootViewController" id="aFW-ot-YVK"/>
+                        <segue destination="w6d-gb-dmT" kind="relationship" relationship="rootViewController" id="8MJ-LS-Ww8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-wB-ucv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="1522"/>
+            <point key="canvasLocation" x="345" y="1734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jkD-lA-hpk">
@@ -1130,12 +1038,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmv-lQ-t45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="147"/>
+            <point key="canvasLocation" x="1444" y="72"/>
         </scene>
         <!--Registrar Administrador-->
         <scene sceneID="UmV-BE-cbc">
             <objects>
-                <viewController storyboardIdentifier="registrarAdmin" id="RAN-SM-jKd" customClass="adminController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registrarAdmin" id="RAN-SM-jKd" customClass="AdminController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RrP-yN-nio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1153,7 +1061,7 @@
                                         <rect key="frame" x="0.0" y="57" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Paterno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-NK-JgI">
                                         <rect key="frame" x="0.0" y="124" width="343" height="20"/>
@@ -1165,7 +1073,7 @@
                                         <rect key="frame" x="0.0" y="181" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Materno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-YO-P9j">
                                         <rect key="frame" x="0.0" y="248" width="343" height="20"/>
@@ -1177,7 +1085,7 @@
                                         <rect key="frame" x="0.0" y="305" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo electronico:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR1-Yf-Twr">
                                         <rect key="frame" x="0.0" y="372" width="343" height="20"/>
@@ -1189,7 +1097,7 @@
                                         <rect key="frame" x="0.0" y="429" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-Um-l7Z">
                                         <rect key="frame" x="0.0" y="496" width="343" height="20"/>
@@ -1244,7 +1152,7 @@
         <!--Registrar Condominio-->
         <scene sceneID="cjT-77-pzl">
             <objects>
-                <viewController storyboardIdentifier="pantallaCondo" id="BDi-Yw-Pzp" customClass="condoController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pantallaCondo" id="BDi-Yw-Pzp" customClass="CondoController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZY-OR-5qu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1364,9 +1272,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="10415" width="32" height="32"/>
+        <image name="62362" width="32" height="32"/>
         <image name="info" width="30" height="27"/>
+        <image name="info.png" width="30" height="27"/>
+        <image name="police_3542" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
         <image name="visitas" width="32" height="32"/>
         <image name="visitme" width="1280" height="351"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8MJ-LS-Ww8"/>
+    </inferredMetricsTieBreakers>
 </document>
