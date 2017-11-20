@@ -20,6 +20,9 @@
 		E35EFBE31FBF4C26001E928F /* CondoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE01FBF4C25001E928F /* CondoController.swift */; };
 		E35EFBE41FBF4C26001E928F /* PerfilAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE11FBF4C25001E928F /* PerfilAdminController.swift */; };
 		E35EFBE51FBF4C26001E928F /* AdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE21FBF4C26001E928F /* AdminController.swift */; };
+		E35EFBE71FC0B370001E928F /* UsuarioVisitMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBE61FC0B370001E928F /* UsuarioVisitMe.swift */; };
+		E35EFBEC1FC1EDE3001E928F /* MailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBEB1FC1EDE3001E928F /* MailClient.swift */; };
+		E35EFBEE1FC1F49A001E928F /* GeneradorContrasena.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EFBED1FC1F49A001E928F /* GeneradorContrasena.swift */; };
 		E37030B21FA0E9340067552D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37030B11FA0E9340067552D /* DBManager.swift */; };
 		E370826F1FA191990018CA15 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826C1FA191990018CA15 /* Usuario.swift */; };
 		E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370826D1FA191990018CA15 /* CondoUsuario.swift */; };
@@ -53,6 +56,9 @@
 		E35EFBE01FBF4C25001E928F /* CondoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoController.swift; sourceTree = "<group>"; };
 		E35EFBE11FBF4C25001E928F /* PerfilAdminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilAdminController.swift; sourceTree = "<group>"; };
 		E35EFBE21FBF4C26001E928F /* AdminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminController.swift; sourceTree = "<group>"; };
+		E35EFBE61FC0B370001E928F /* UsuarioVisitMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioVisitMe.swift; sourceTree = "<group>"; };
+		E35EFBEB1FC1EDE3001E928F /* MailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailClient.swift; sourceTree = "<group>"; };
+		E35EFBED1FC1F49A001E928F /* GeneradorContrasena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneradorContrasena.swift; sourceTree = "<group>"; };
 		E37030B11FA0E9340067552D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E370826C1FA191990018CA15 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E370826D1FA191990018CA15 /* CondoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUsuario.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 				E37030B11FA0E9340067552D /* DBManager.swift */,
 				6AAEBECA1FA2342900E829FE /* Admin.swift */,
 				6AAEBECC1FA234B500E829FE /* Condominio.swift */,
+				E35EFBE61FC0B370001E928F /* UsuarioVisitMe.swift */,
+				E35EFBEB1FC1EDE3001E928F /* MailClient.swift */,
+				E35EFBED1FC1F49A001E928F /* GeneradorContrasena.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,9 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
+				E35EFBE71FC0B370001E928F /* UsuarioVisitMe.swift in Sources */,
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
 				E35EFBE41FBF4C26001E928F /* PerfilAdminController.swift in Sources */,
 				E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */,
+				E35EFBEC1FC1EDE3001E928F /* MailClient.swift in Sources */,
 				E39D4A261F9F98E3001ABC91 /* ViewController.swift in Sources */,
 				E35EFBE51FBF4C26001E928F /* AdminController.swift in Sources */,
 				6AAEBECD1FA234B500E829FE /* Condominio.swift in Sources */,
@@ -334,6 +345,7 @@
 				E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */,
 				E39D4A241F9F98E3001ABC91 /* AppDelegate.swift in Sources */,
 				E37082751FA194E70018CA15 /* Vigilante.swift in Sources */,
+				E35EFBEE1FC1F49A001E928F /* GeneradorContrasena.swift in Sources */,
 				E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */,
 				E35EFBE31FBF4C26001E928F /* CondoController.swift in Sources */,
 				E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */,
@@ -479,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23254C7WGD;
 				INFOPLIST_FILE = VisitMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.VisitMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23254C7WGD;
 				INFOPLIST_FILE = VisitMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.VisitMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

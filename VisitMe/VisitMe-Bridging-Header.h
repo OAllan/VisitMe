@@ -3,3 +3,4 @@
 //
 
 #import <sqlite3.h>
+#import <MailCore/MailCore.h>

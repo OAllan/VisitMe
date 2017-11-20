@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     @IBOutlet weak var contraTf: UITextField!
@@ -15,10 +16,16 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     let keyboardHeight: CGFloat = 200
     var tipo: String? = "Residente"
     let tipoUsuarios = ["Residente", "Vigilante" ,"Administrador"]
+    var mailClient : MailClient?
+    let generadorContra = GeneradorContrasena()
+    @IBOutlet weak var reestablecer: UIButton!
+    @IBOutlet weak var olvide: UIButton!
+    @IBOutlet weak var inicio: UIButton!
+    @IBOutlet weak var regresar: UIButton!
     
-    
+    @IBOutlet weak var contrasenaLabel: UILabel!
     @objc func keyboardWillShow(notification: NSNotification) {
-        
+    
         if view.frame.origin.y == 0{
             self.view.frame.origin.y -= keyboardHeight
         }
@@ -31,6 +38,33 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    @IBAction func reestablecerContra(_ sender: Any) {
+        mostrarReestablecer()
+    }
+    
+    @IBAction func inicio(_ sender: Any) {
+        mostrarInicioDeSesion()
+    }
+    
+    
+    func mostrarReestablecer() {
+        reestablecer.isHidden = false
+        inicio.isHidden = true
+        olvide.isHidden = true
+        regresar.isHidden = false
+        contraTf.isHidden = true
+        contrasenaLabel.isHidden = true
+    }
+    
+    func mostrarInicioDeSesion(){
+        reestablecer.isHidden = true
+        inicio.isHidden = false
+        olvide.isHidden = false
+        regresar.isHidden = true
+        contraTf.isHidden = false
+        contrasenaLabel.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +72,12 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         contraTf.delegate = self
         correoTf.delegate = self
+        reestablecer.isHidden = true
+        inicio.isHidden = false
+        olvide.isHidden = false
+        regresar.isHidden = true
+        contraTf.isHidden = false
+        contrasenaLabel.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,6 +87,16 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
+    @IBAction func mostrarCampos(_ sender: Any) {
+        
+        let textField = sender as! UITextField
+        
+        
+        
+    }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return tipoUsuarios.count
@@ -72,30 +122,33 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return label
     }
     
-    func enviarMail(){
-        let session = URLSession.shared
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.mailgun.net/v3/sandboxcfed339b84b54aac889d58b921042503.mailgun.org/messages")! as URL as URL)
-        request.httpMethod = "POST"
-        let data = "from: Excited User <sandboxcfed339b84b54aac889d58b921042503.mailgun.org>&to: [oscarallan94@gmail.com]&subject:Hello&text:Testinggsome Mailgun awesomness!"
-        request.httpBody = data.data(using: String.Encoding.ascii)
-        request.setValue("key-f0bbe64b90820d692c8bb7428e4043cb", forHTTPHeaderField: "api")
-        let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
-            
-            if let error = error {
-                print(error)
-            }
-            if let response = response {
-                print("url = \(response.url!)")
-                print("response = \(response)")
-                let httpResponse = response as! HTTPURLResponse
-                print("response code = \(httpResponse.statusCode)")
-            }
-            
-            
-        })
-        task.resume()
-    }
     
+    @IBAction func reestablecerContrasena(_ sender: Any) {
+        var usuario: UsuarioVisitMe?
+        switch tipo! {
+        case "Vigilante":
+            usuario = AppDelegate.dbManager.cargarVigilante(email: correoTf.text!)
+        case "Administrador":
+            usuario = AppDelegate.dbManager.cargarAdmin(email: correoTf.text!)
+        case "Residente":
+            usuario = AppDelegate.dbManager.cargarResidente(email: correoTf.text!)
+        default:
+            usuario = nil
+        }
+        
+        if usuario != nil{
+            let nueva = generadorContra.generarContrasena()
+            let mensaje = "<p>Hola, \((usuario?.nombre)!).</p><p>Tu nueva contraseña es: \(nueva)</p><p>Saludos.</p><p>Equipo VisitMe.</p>"
+            mailClient = MailClient()
+            mailClient?.enviarMail(mail: correoTf.text!, mensaje: mensaje, asunto: "Reestablecer Contraseña", nombre: (usuario?.nombre)!)
+            AppDelegate.dbManager.updateUsuario(tabla: tipo!.uppercased(), atributo: "PASSWORD", dato: nueva, ID: (usuario?.id)!)
+            showAlert(title: "Correo enviado", message: "Se ha enviado una contraseña temporal a tu correo")
+        }
+        else{
+            showAlert(title: "Usuario no registrado", message: "Correo no existente")
+        }
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -107,53 +160,72 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func iniciarSesion(_ sender: Any) {
-        enviarMail()
+        
         if ViewController.dbManager!.compararPassword(email: correoTf.text!, password: contraTf.text!, tabla: (tipo?.uppercased())!){
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabViewController = siguienteTabController(tipo: tipo!, storyBoard: storyBoard)
+            tabViewController?.loadViewIfNeeded()
+            let navigationControllerUsuarioVisitMe = tabViewController?.childViewControllers[0] as! UINavigationController
+            navigationControllerUsuarioVisitMe.loadViewIfNeeded()
+            let dashboardController = navigationControllerUsuarioVisitMe.topViewController as! DashboardController
+            dashboardController.loadViewIfNeeded()
+            
+            
             switch tipo!{
             case "Vigilante":
-                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
-                tabViewController.loadViewIfNeeded()
-                let navigationVigilanteViewController = tabViewController.childViewControllers[0] as! UINavigationController
-                navigationVigilanteViewController.loadViewIfNeeded()
-                let vigilanteViewController = navigationVigilanteViewController.topViewController as! VigilanteController
-                vigilanteViewController.loadViewIfNeeded()
-                vigilanteViewController.vigilante = ViewController.dbManager?.cargarVigilante(email: correoTf.text!)
-                vigilanteViewController.cargarInformacion(email: correoTf.text!)
-                self.present(tabViewController, animated: true, completion: nil)
-            case "Residente":
-                let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabResidenteController") as! UITabBarController
-                tabViewController.loadViewIfNeeded()
-                let navigationController = tabViewController.childViewControllers[1] as! UINavigationController
-                let navigationControllerResidente = tabViewController.childViewControllers[0] as! UINavigationController
-                navigationControllerResidente.loadViewIfNeeded()
-                let residenteViewController = navigationControllerResidente.topViewController as! DashboardController
-                residenteViewController.loadViewIfNeeded()
-                navigationController.loadViewIfNeeded()
-                let listaInvitadosController = navigationController.topViewController as! ListaVisitantesController
+                let vigilante = ViewController.dbManager?.cargarVigilante(email: correoTf.text!)
+                dashboardController.usuario = vigilante
+                let condominio = AppDelegate.dbManager.cargarVigilanteCondominio(id: (vigilante?.id)!)
+               dashboardController.condominio = condominio
+                dashboardController.cargarInformacion(email: correoTf.text!)
                 
+            case "Residente":
+                let navigationController = tabViewController?.childViewControllers[1] as! UINavigationController
+                navigationController.loadViewIfNeeded()
                 let residente = ViewController.dbManager?.cargarResidente(email: correoTf.text!)
+                let condominio = AppDelegate.dbManager.cargarResidenteCondominio(id: (residente?.id)!)
+                let listaInvitadosController = navigationController.topViewController as! ListaVisitantesController
                 listaInvitadosController.residente = residente
-                residenteViewController.residente = residente
-                residenteViewController.cargarInformacion(email: correoTf.text!)
+                dashboardController.usuario = residente
+                dashboardController.condominio = condominio
+                dashboardController.cargarInformacion(email: correoTf.text!)
                 listaInvitadosController.actualizarDatos()
-                self.present(tabViewController, animated: true, completion: nil)
             case "Admnistrador":
                 print(".")
             default:
                 break
             }
             
+            
+            
+            dashboardController.cargarInformacion(email: correoTf.text!)
+            self.present(tabViewController!, animated: true, completion: nil)
+            
+            
         }
         else{
-            showAlert()
+            showAlert(title: "Error al iniciar sesión", message: "Usuario, contraseña o tipo de usuario incorrecto")
+            
         }
         
     }
     
-    func showAlert()
+    func siguienteTabController(tipo: String, storyBoard : UIStoryboard) -> UITabBarController?{
+        switch tipo {
+        case "Vigilante":
+            return storyBoard.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+        case "Residente":
+            return storyBoard.instantiateViewController(withIdentifier: "tabResidenteController") as! UITabBarController
+        case "Administrador":
+            return storyBoard.instantiateViewController(withIdentifier: "superPerfilAdmin") as! UITabBarController
+        default:
+            return nil
+        }
+    }
+    
+    func showAlert(title: String, message: String)
     {
-        let alert = UIAlertController(title: "Error al iniciar sesion", message: "Usuario, contraseña o tipo de usuario incorrecto", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         
         let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
@@ -164,6 +236,8 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
     
 }

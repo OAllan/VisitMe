@@ -9,5 +9,5 @@ target 'VisitMe' do
   pod 'BarcodeScanner'
   pod 'QRCode'
   pod 'OHMySQL'
-
+  pod 'mailcore2-ios'
 end

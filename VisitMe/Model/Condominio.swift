@@ -8,60 +8,50 @@
 
 import Foundation
 
-class Condominio{
+class Condominio {
     var id: String?
     var adminEncargado: Admin?
-    var direccion: String?
-    var longitud: Double?
-    var latitud: Double?
+    var calle: String?
+    var numero: String?
+    var colonia: String?
+    var cp: String?
+    var ciudad: String?
+    var estado: String?
     
-    init(id: String, adminEncargado: Admin, direccion:String, latitud:Double, longitud:Double){
+    init(id: String, adminEncargado: Admin, calle: String, numero: String, colonia: String, cp: String, ciudad: String, estado: String){
         self.id = id
         self.adminEncargado = adminEncargado
-        self.direccion = direccion
-        self.latitud = latitud
-        self.longitud = longitud
-        
-        func getId() -> String{
-            return self.id!
-        }
-        
-        func getDireccion() -> String{
-            return self.direccion!
-        }
-        
-        func getLatitud() -> Double{
-            return self.latitud!
-        }
-        
-        func getLongitud() -> Double{
-            return self.longitud!
-            
-        }
-        
-        func getAdmin() -> Admin{
-            return self.adminEncargado!
-        }
-        
-        func setId(id: String){
-            self.id = id
-        }
-        
-        func setDireccion(direccion: String){
-            self.direccion = direccion
-        }
-        
-        func setLatitud(latitud: Double){
-            self.latitud = latitud
-        }
-        
-        func setLongitud(longitud: Double){
-            self.longitud = longitud
-        }
-        
-        func setAdmin(adminEncargado: Admin){
-            self.adminEncargado = adminEncargado
-        }
-        
+        self.calle = calle
+        self.numero = numero
+        self.colonia = colonia
+        self.cp = cp
+        self.ciudad = ciudad
+        self.estado = estado
     }
+        
+    func getId() -> String{
+        return self.id!
+    }
+    
+        
+        
+    func getAdmin() -> Admin{
+        return self.adminEncargado!
+    }
+        
+    func setId(id: String){
+        self.id = id
+    }
+        
+        
+        
+    func setAdmin(adminEncargado: Admin){
+        self.adminEncargado = adminEncargado
+    }
+    
+    func getDireccionCompleta() -> String{
+        return "\(calle!) \(numero!), \(colonia!).\n\(ciudad!), \(estado!). CP: \(cp!)"
+    }
+        
+    
 }

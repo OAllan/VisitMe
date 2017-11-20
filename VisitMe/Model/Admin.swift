@@ -8,15 +8,11 @@
 
 import Foundation
 
-class Admin{
+class Admin: UsuarioVisitMe {
     
-    var id: String?
-    var nombre: String?
-    var apellidoPaterno: String?
-    var apellidoMaterno: String?
-    var email: String?
     
     init(id: String, nombre:String, apellidoPaterno:String, apellidoMaterno:String, email: String){
+        super.init()
         self.id = id
         self.nombre = nombre
         self.apellidoPaterno = apellidoPaterno

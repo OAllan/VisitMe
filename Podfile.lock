@@ -1,18 +1,21 @@
 PODS:
   - BarcodeScanner (3.0.0)
+  - mailcore2-ios (0.6.4)
   - OHMySQL (2.1.2)
   - QRCode (2.0)
 
 DEPENDENCIES:
   - BarcodeScanner
+  - mailcore2-ios
   - OHMySQL
   - QRCode
 
 SPEC CHECKSUMS:
   BarcodeScanner: 4ba61e8b2d50da7b17685085d4bb8e1a0c14613e
+  mailcore2-ios: 3ff0be2fa553d4da9c11d39c11d51863c768f24f
   OHMySQL: 836f32e1dace997e15254d53b9976bf0d6d273f9
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
 
-PODFILE CHECKSUM: f742b459189791a686471920ad193b1fa3fea9bd
+PODFILE CHECKSUM: 224dc2f3e27d6244d6d0f3265169c20be6a93fcc
 
 COCOAPODS: 1.3.1

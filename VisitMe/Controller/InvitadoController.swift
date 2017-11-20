@@ -45,6 +45,8 @@ class InvitadoController: UIViewController, UITextFieldDelegate{
         return true
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gmtDf.timeZone = NSTimeZone(name: "CST")! as TimeZone

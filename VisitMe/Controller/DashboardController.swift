@@ -11,13 +11,13 @@ import UIKit
 class DashboardController: UIViewController{
     
     @IBOutlet weak var nombreLabel: UILabel!
-    var residente: Usuario? = nil
+    var usuario: UsuarioVisitMe? = nil
     var type: String?
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var apellidoTf: UILabel!
+    var condominio: Condominio?
     
-    var usuario: Usuario?
-    
+    @IBOutlet weak var condominioText: UITextView!
     
     
     override func viewDidLoad() {
@@ -33,9 +33,12 @@ class DashboardController: UIViewController{
     
     
     func cargarInformacion(email: String){
-        nombreLabel.text = residente?.nombre
-        apellidoTf.text = "\(residente!.apellidoPaterno!) \(residente!.apellidoMaterno!)"
+        
+        nombreLabel.text = usuario?.nombre
+        apellidoTf.text = "\((usuario?.apellidoPaterno)!) \((usuario?.apellidoMaterno)!)"
         self.email.text = email
+        condominioText.text = "Mi condominio:\n\((condominio?.getDireccionCompleta())!)"
+        
     }
     
     
