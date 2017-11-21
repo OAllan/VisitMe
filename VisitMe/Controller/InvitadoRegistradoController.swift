@@ -52,7 +52,7 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
         
         mailComposerVC.setToRecipients([(invitacion?.email)!])
         mailComposerVC.setSubject("Invitación VisitMe")
-        mailComposerVC.setMessageBody("<p>Hola, \((invitacion?.nombres)!).</p><p>Favor de traer contigo el siguiente código QR, será tu acceso al condominio. Para proteger el medio ambiente, te recomendamos traerlo en tu celular o dispositivo de preferencia.</p>", isHTML: false)
+        mailComposerVC.setMessageBody("<p>Hola, \((invitacion?.nombres)!).</p><p>Favor de traer contigo el siguiente código QR, será tu acceso al condominio. Para proteger el medio ambiente, te recomendamos traerlo en tu celular o dispositivo de preferencia.</p>", isHTML: true)
         let imageData = UIImagePNGRepresentation(imagenQR!)
         mailComposerVC.addAttachmentData(imageData!, mimeType: "image/png", fileName: "codigoqr.png")
         
