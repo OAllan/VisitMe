@@ -35,6 +35,7 @@
 		E39D4A2E1F9F98E3001ABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39D4A2C1F9F98E3001ABC91 /* LaunchScreen.storyboard */; };
 		E3ABBC381FA1ADDD0002393A /* InicioSesionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */; };
 		E3B994D21FBA4230009D45FA /* QRGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */; };
+		E3DDD6761FC47DFD00757202 /* CambioContraseñaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DDD6751FC47DFD00757202 /* CambioContraseñaController.swift */; };
 		E3EF87FD1FBC05E70062921E /* InvitadoRegistradoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */; };
 		E3EF87FF1FBC257A0062921E /* ListaVisitantesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */; };
 		E3F706441FC33D890014D1C5 /* ListaResidentesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F706431FC33D890014D1C5 /* ListaResidentesController.swift */; };
@@ -77,6 +78,7 @@
 		E39D4A351F9F9AC1001ABC91 /* VisitMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisitMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3ABBC371FA1ADDD0002393A /* InicioSesionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionController.swift; sourceTree = "<group>"; };
 		E3B994D11FBA4230009D45FA /* QRGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorController.swift; sourceTree = "<group>"; };
+		E3DDD6751FC47DFD00757202 /* CambioContraseñaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CambioContraseñaController.swift"; sourceTree = "<group>"; };
 		E3EF87FC1FBC05E70062921E /* InvitadoRegistradoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitadoRegistradoController.swift; sourceTree = "<group>"; };
 		E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVisitantesController.swift; sourceTree = "<group>"; };
 		E3F706431FC33D890014D1C5 /* ListaResidentesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaResidentesController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				E3EF87FE1FBC257A0062921E /* ListaVisitantesController.swift */,
 				E3F706431FC33D890014D1C5 /* ListaResidentesController.swift */,
 				E3F706451FC34A9A0014D1C5 /* ListaVigilantesController.swift */,
+				E3DDD6751FC47DFD00757202 /* CambioContraseñaController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				E37082701FA191990018CA15 /* CondoUsuario.swift in Sources */,
 				E35EFBE71FC0B370001E928F /* UsuarioVisitMe.swift in Sources */,
+				E3DDD6761FC47DFD00757202 /* CambioContraseñaController.swift in Sources */,
 				E370826F1FA191990018CA15 /* Usuario.swift in Sources */,
 				E35EFBE41FBF4C26001E928F /* PerfilAdminController.swift in Sources */,
 				E3219A0F1FA22B3700E555F0 /* QRScannerController.swift in Sources */,

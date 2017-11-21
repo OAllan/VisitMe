@@ -1,3 +1,4 @@
+
 //
 //  ResidenteController.swift
 //  VisitMe
@@ -31,6 +32,18 @@ class DashboardController: UIViewController{
         present(pantallaInicial, animated: true, completion: nil)
     }
     
+    
+    @IBAction func cambiarContraseña(_ sender: Any) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pantallaCambio = storyBoard.instantiateViewController(withIdentifier: "cambio") as! CambioContraseñaController
+        pantallaCambio.usuario = self.usuario
+        pantallaCambio.tipo = self.type?.uppercased()
+        self.navigationController?.pushViewController(pantallaCambio, animated: true)
+        
+    }
+    
+    
     @IBAction func editar(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let pantallaEditar = storyBoard.instantiateViewController(withIdentifier: "reg") as! RegistroUsuarioController
@@ -52,7 +65,6 @@ class DashboardController: UIViewController{
         apellidoTf.text = "\((usuario?.apellidoPaterno)!) \((usuario?.apellidoMaterno)!)"
         self.email.text = email
         condominioText.text = "Mi condominio:\n\((condominio?.getDireccionCompleta())!)"
-        
     }
     
     

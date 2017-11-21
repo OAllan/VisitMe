@@ -562,39 +562,49 @@
                                 <rect key="frame" x="16" y="84" width="343" height="514"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQf-su-LXO">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="73.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines-Bold" family="Champagne &amp; Limousines" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-yH-jX2">
-                                        <rect key="frame" x="0.0" y="85.5" width="343" height="86"/>
+                                        <rect key="frame" x="0.0" y="73.5" width="343" height="73.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjL-Ab-kcE">
-                                        <rect key="frame" x="0.0" y="171.5" width="343" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="147" width="343" height="73.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-jP-R1r">
-                                        <rect key="frame" x="0.0" y="257" width="343" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="220.5" width="343" height="73"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-Bo-JoM">
-                                        <rect key="frame" x="0.0" y="342.5" width="343" height="86"/>
+                                        <rect key="frame" x="0.0" y="293.5" width="343" height="73.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAc-WR-Fci">
+                                        <rect key="frame" x="0.0" y="367" width="343" height="73.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
+                                        <state key="normal" title="Cambiar contraseña">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cambiarContraseña:" destination="w6d-gb-dmT" eventType="touchUpInside" id="bNe-8E-Z0o"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-bl-zdF">
-                                        <rect key="frame" x="0.0" y="428.5" width="343" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="440.5" width="343" height="73.5"/>
                                         <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="20"/>
                                         <state key="normal" title="Cerrar Sesión">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -634,6 +644,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBL-PB-6Wx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="207" y="-1650"/>
+        </scene>
+        <!--Cambio de contraseña-->
+        <scene sceneID="GfA-J8-j0Y">
+            <objects>
+                <viewController storyboardIdentifier="cambio" id="G5k-0J-dMA" customClass="CambioContraseñaController" customModule="VisitMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzw-4d-Bqc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cjF-7I-3aZ">
+                                <rect key="frame" x="16" y="34" width="343" height="621"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña actual:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yd-or-O1H">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="77.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BK-Zy-dAR">
+                                        <rect key="frame" x="0.0" y="77.5" width="343" height="78"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña nueva:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-KF-X2a">
+                                        <rect key="frame" x="0.0" y="155.5" width="343" height="77.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgW-B7-wST">
+                                        <rect key="frame" x="0.0" y="233" width="343" height="77.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar contraseña nueva:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-J0-6gQ">
+                                        <rect key="frame" x="0.0" y="310.5" width="343" height="77.5"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6N3-YI-QTX">
+                                        <rect key="frame" x="0.0" y="388" width="343" height="78"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <action selector="moverVista:" destination="G5k-0J-dMA" eventType="editingDidBegin" id="SUk-xQ-IJ8"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G3e-Xy-4BN">
+                                        <rect key="frame" x="0.0" y="466" width="343" height="77.5"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-NC-Ase">
+                                        <rect key="frame" x="0.0" y="543.5" width="343" height="77.5"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uWQ-1G-XUc" firstAttribute="trailing" secondItem="cjF-7I-3aZ" secondAttribute="trailing" constant="16" id="Lud-AM-Gdj"/>
+                            <constraint firstItem="cjF-7I-3aZ" firstAttribute="top" secondItem="uWQ-1G-XUc" secondAttribute="top" constant="14" id="NT9-I2-tik"/>
+                            <constraint firstItem="cjF-7I-3aZ" firstAttribute="leading" secondItem="uWQ-1G-XUc" secondAttribute="leading" constant="16" id="Qxb-29-dsq"/>
+                            <constraint firstItem="uWQ-1G-XUc" firstAttribute="bottom" secondItem="cjF-7I-3aZ" secondAttribute="bottom" constant="12" id="Zke-Gb-qbv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uWQ-1G-XUc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cambio de contraseña" id="Jux-Y1-GMJ">
+                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="q80-Lz-KBv">
+                            <connections>
+                                <action selector="guardar:" destination="G5k-0J-dMA" id="z1u-6Z-8T8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actual" destination="4BK-Zy-dAR" id="ltW-F9-cna"/>
+                        <outlet property="confirmacion" destination="6N3-YI-QTX" id="EUU-MM-ZMX"/>
+                        <outlet property="nueva" destination="zgW-B7-wST" id="wEm-lg-Nd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02z-3d-ozy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="-1618.7406296851575"/>
         </scene>
         <!--Mis visitas-->
         <scene sceneID="mAY-X6-YGM">
@@ -973,6 +1068,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="17"/>
                                                 <state key="normal" title="Registrar Entrada"/>
+                                                <connections>
+                                                    <action selector="registrarEntrada:" destination="pJC-bH-mKN" eventType="touchUpInside" id="Feq-Gc-ZDH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXG-eX-bCZ">
                                                 <rect key="frame" x="179.5" y="0.0" width="163.5" height="29"/>
@@ -981,6 +1079,9 @@
                                                 <state key="normal" title="Registrar Salida">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registrarSalida:" destination="pJC-bH-mKN" eventType="touchUpInside" id="GTE-Pc-BMD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

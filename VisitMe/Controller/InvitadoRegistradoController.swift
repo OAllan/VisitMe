@@ -24,12 +24,16 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var apellidos: UILabel!
     @IBOutlet weak var fecha: UILabel!
+    var cstDate: String?
+    let gmtDf: DateFormatter = DateFormatter()
     
     @IBOutlet weak var placas: UILabel!
     @IBOutlet weak var carro: UILabel!
     @IBOutlet weak var email: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        gmtDf.timeZone = NSTimeZone(name: "CST")! as TimeZone
+        gmtDf.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
     }
     
@@ -47,8 +51,8 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         mailComposerVC.setToRecipients([(invitacion?.email)!])
-        mailComposerVC.setSubject("Sending you an in-app e-mail...")
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        mailComposerVC.setSubject("Invitación VisitMe")
+        mailComposerVC.setMessageBody("<p>Hola, \((invitacion?.nombres)!).</p><p>Favor de traer contigo el siguiente código QR, será tu acceso al condominio. Para proteger el medio ambiente, te recomendamos traerlo en tu celular o dispositivo de preferencia.</p>", isHTML: false)
         let imageData = UIImagePNGRepresentation(imagenQR!)
         mailComposerVC.addAttachmentData(imageData!, mimeType: "image/png", fileName: "codigoqr.png")
         
@@ -142,6 +146,55 @@ class InvitadoRegistradoController: UIViewController, MFMailComposeViewControlle
         return "\(componentes![2]) de \(mes) del \(componentes![0])"
     }
     
+    
+    @IBAction func registrarEntrada(_ sender: Any) {
+        if (invitacion?.horaEntrada)! == "0000-00-00 00:00:00" {
+            let timestamp = self.gmtDf.string(from: Date())
+            AppDelegate.dbManager.updateInvitacion(codigo: (invitacion?.folio)!, atributo: "HORA_ENTRADA", dato: timestamp)
+            invitacion?.horaEntrada = timestamp
+            showAlert(title: "Registro exitoso", message: "Hora de entrada registrada")
+        }
+        else{
+            showAlert(title: "Error", message: "La hora de entrada ya ha sido registrada")
+        }
+        
+        
+    }
+    
+    @IBAction func registrarSalida(_ sender: Any) {
+        if (invitacion?.horaEntrada)! != "0000-00-00 00:00:00"{
+            if (invitacion?.horaSalida)! == "0000-00-00 00:00:00"{
+                let timestamp = self.gmtDf.string(from: Date())
+                AppDelegate.dbManager.updateInvitacion(codigo: (invitacion?.folio)!, atributo: "HORA_SALIDA", dato: timestamp)
+                AppDelegate.dbManager.updateInvitacion(codigo: (invitacion?.folio)!, atributo: "EXPIRADA", dato: "1")
+                invitacion?.horaSalida = timestamp
+                invitacion?.esExpirada = true
+                self.cargarInformacion()
+                showAlert(title: "Registro exitoso", message: "Hora de entrada registrada")
+            }
+            else{
+                showAlert(title: "Error", message: "La hora de salida ya ha sido registrada")
+            }
+        }
+        else{
+            showAlert(title: "Error", message: "No se ha registrado hora de entrada")
+        }
+    }
+    
+    
+    func showAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        
+        let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            self.cargarInformacion()
+        })
+        
+        
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func enviarPorWhatsapp(_ sender: Any) {
         

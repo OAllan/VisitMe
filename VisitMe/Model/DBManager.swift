@@ -83,7 +83,7 @@ class DBManager{
     }
 
     func updateInvitacion(codigo: String, atributo: String, dato: String){
-        let condicionBusqueda: String = "CODIGO=" + codigo
+        let condicionBusqueda: String = "CODIGO= '\(codigo)'"
         let query = OHMySQLQueryRequestFactory.update("INVITACION", set: [atributo.uppercased(): dato], condition: condicionBusqueda)
         try? context?.execute(query)
     }
