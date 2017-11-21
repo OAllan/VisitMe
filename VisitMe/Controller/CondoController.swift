@@ -113,6 +113,30 @@ class CondoController: UIViewController, UITextFieldDelegate{
         
         
         let ok  = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            self.perfilAdmin?.loadViewIfNeeded()
+            let navigation = self.perfilAdmin?.childViewControllers[0] as! UINavigationController
+            navigation.loadViewIfNeeded()
+            let dashboardController = navigation.topViewController as! DashboardController
+            dashboardController.loadViewIfNeeded()
+            dashboardController.type = "ADMINISTRADOR"
+            let condominio = AppDelegate.dbManager.cargarAdminCondominio(adminId: (self.admin?.id)!)
+            let residentesNavigationController = self.perfilAdmin?.childViewControllers[2] as! UINavigationController
+            residentesNavigationController.loadViewIfNeeded()
+            let vigilantesNavigationController = self.perfilAdmin?.childViewControllers[1] as! UINavigationController
+            vigilantesNavigationController.loadViewIfNeeded()
+            let listaVigilantesController = vigilantesNavigationController.topViewController as! ListaVigilantesController
+            let listaResidentesController = residentesNavigationController.topViewController as! ListaResidentesController
+            listaVigilantesController.loadViewIfNeeded()
+            listaResidentesController.loadViewIfNeeded()
+            listaResidentesController.condominio = condominio
+            listaVigilantesController.condominio = condominio
+            listaResidentesController.admin = self.admin
+            listaVigilantesController.admin = self.admin
+            dashboardController.usuario = self.admin
+            dashboardController.condominio = condominio
+            listaVigilantesController.actualizarDatos()
+            listaResidentesController.actualizarDatos()
+            dashboardController.cargarInformacion(email: (self.admin?.email)!)
             self.present(self.perfilAdmin!, animated: true, completion: nil)
             
             
