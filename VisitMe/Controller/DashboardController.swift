@@ -31,6 +31,20 @@ class DashboardController: UIViewController{
         present(pantallaInicial, animated: true, completion: nil)
     }
     
+    @IBAction func editar(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pantallaEditar = storyBoard.instantiateViewController(withIdentifier: "reg") as! RegistroUsuarioController
+       pantallaEditar.loadViewIfNeeded()
+        pantallaEditar.tipo = type?.uppercased()
+        pantallaEditar.setPantallaEditar()
+        pantallaEditar.apellidoMaterno.text = usuario?.apellidoMaterno
+        pantallaEditar.apellidoPaterno.text = usuario?.apellidoPaterno
+        pantallaEditar.correo.text = usuario?.email
+        pantallaEditar.nombre.text = usuario?.nombre
+        pantallaEditar.usuario = usuario
+        
+        navigationController?.pushViewController(pantallaEditar, animated: true)
+    }
     
     func cargarInformacion(email: String){
         

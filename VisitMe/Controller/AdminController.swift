@@ -48,6 +48,7 @@ class AdminController: UIViewController, UITextFieldDelegate{
         
     }
     
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -64,9 +65,29 @@ class AdminController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func guardar(_ sender: Any) {
+        
         if verificarCampos(){
             if AppDelegate.dbManager.existeCorreo(tabla: "ADMINISTRADOR", correo: email.text!) {
                 showErrorAlert(title: "Correo no válido", message: "El correo ingresado ya está registrado con otro usuario")
+                return
+            }
+            if isBack != nil && isBack!{
+                if (admin?.nombre)! != nombre.text!{
+                    AppDelegate.dbManager.updateAdministrador(atributoSeleccionado: "NOMBRE", datoActualizado: nombre.text!, idActualizada: (admin?.id)!)
+                }
+                if (admin?.apellidoMaterno)! != apellidoMaterno.text!{
+                    AppDelegate.dbManager.updateAdministrador(atributoSeleccionado: "APELLIDO_MATERNO", datoActualizado: apellidoMaterno.text!, idActualizada: (admin?.id)!)
+                }
+                if (admin?.apellidoPaterno)! != apellidoPaterno.text!{
+                    AppDelegate.dbManager.updateAdministrador(atributoSeleccionado: "APELLIDO_PATERNO", datoActualizado: apellidoPaterno.text!, idActualizada: (admin?.id)!)
+                }
+                
+                if (admin?.email)! != email.text!{
+                    AppDelegate.dbManager.updateAdministrador(atributoSeleccionado: "EMAIL", datoActualizado: apellidoMaterno.text!, idActualizada: (admin?.id)!)
+                }
+            AppDelegate.dbManager.updateAdministrador(atributoSeleccionado: "PASSWORD", datoActualizado: apellidoMaterno.text!, idActualizada: (admin?.id)!)
+                
+                showSuccessAlert(admin: admin!)
                 return
             }
             admin = AppDelegate.dbManager.registrarAdmin(nombre: nombre.text!, apellidoPaterno: apellidoPaterno.text!, apellidoMaterno: apellidoMaterno.text!, password: contraseña.text!, email: email.text!)

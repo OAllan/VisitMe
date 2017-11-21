@@ -1,21 +1,21 @@
 //
-//  ListaVisitantesController.swift
+//  ListaVigilantesController.swift
 //  VisitMe
 //
-//  Created by Oscar Allan Ruiz Toledo  on 15/11/17.
+//  Created by Oscar Allan Ruiz Toledo  on 20/11/17.
 //  Copyright © 2017 Oscar Allan Ruiz Toledo . All rights reserved.
 //
 
 import UIKit
 
-
-class ListaVisitantesController: UITableViewController
-{
-    var residente: Usuario?
-    var lista: [Invitacion]?
+class ListaVigilantesController : UITableViewController {
+    
+    var lista: [Vigilante]?
     var refresher: UIRefreshControl!
-    var pantallaInvitacion: InvitadoRegistradoController?
-
+    var condominio: Condominio?
+    var admin : Admin?
+    var pantallaRegistro: RegistroUsuarioController?
+    
     @IBOutlet weak var botonEditar: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -28,10 +28,9 @@ class ListaVisitantesController: UITableViewController
         self.tableView.addSubview(refresher)
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        pantallaInvitacion = storyBoard.instantiateViewController(withIdentifier: "registrado") as! InvitadoRegistradoController
+        pantallaRegistro = storyBoard.instantiateViewController(withIdentifier: "reg") as! RegistroUsuarioController
         
     }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -42,23 +41,28 @@ class ListaVisitantesController: UITableViewController
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let invitacion = lista![indexPath.row]
-        let nombre = invitacion.getNombres()
-        let apellidos = "\(invitacion.getApellidoPaterno()) \(invitacion.getApellidoMaterno())"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellVigilante", for: indexPath)
+        let vigilante = lista![indexPath.row]
+        let nombre = vigilante.nombre
+        let apellidos = "\(vigilante.apellidoPaterno!) \(vigilante.apellidoMaterno!)"
         cell.textLabel!.text = nombre
         cell.detailTextLabel!.text = apellidos
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pantallaInvitacion?.loadViewIfNeeded()
-        pantallaInvitacion?.invitacion = lista?[indexPath.row]
-       pantallaInvitacion?.residente = true
-        pantallaInvitacion?.cargarInformacion()
+    @IBAction func agregarVigilante(_ sender: Any) {
         
-        navigationController?.pushViewController(pantallaInvitacion!, animated: true)
+        pantallaRegistro?.loadViewIfNeeded()
+        pantallaRegistro?.condominio = condominio
+        pantallaRegistro?.tipo = "VIGILANTE"
+        self.navigationController?.pushViewController(pantallaRegistro!, animated: true)
+    }
+       
+    @objc func actualizarDatos(){
+        lista = AppDelegate.dbManager.cargarVigilantes(condoId: (condominio?.id)!)
+        self.tableView.reloadData()
+        self.refresher.endRefreshing()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -78,25 +82,13 @@ class ListaVisitantesController: UITableViewController
         }
     }
     
-    @objc func actualizarDatos(){
-        lista = AppDelegate.dbManager.cargarVisitantes(residenteId: (residente?.id)!)
-        self.tableView.reloadData()
-        self.refresher.endRefreshing()
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destino = segue.destination as! InvitadoController
-        destino.usuario = self.residente
-    }
-    
     func showDeleteAlert(indexPath: IndexPath){
-        let alert = UIAlertController(title: "Confirmar", message: "¿Estás segur@ que deseas eliminar esta invitación?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirmar", message: "¿Estás segur@ que deseas eliminar al vigilante?", preferredStyle: .alert)
         
         
         let eliminar  = UIAlertAction(title: "Eliminar", style: .default, handler: { (action) -> Void in
-            let invitacion = self.lista?.remove(at: indexPath.row)
-            AppDelegate.dbManager.borrarInvitacion(codigoSeleccionado: (invitacion?.folio)!)
+            let vigilante = self.lista?.remove(at: indexPath.row)
+            AppDelegate.dbManager.borrarVigilante(idSeleccionada: (vigilante?.id)!)
             self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         })
         
@@ -110,3 +102,4 @@ class ListaVisitantesController: UITableViewController
         
     }
 }
+

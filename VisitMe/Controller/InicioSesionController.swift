@@ -160,6 +160,10 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func iniciarSesion(_ sender: Any) {
+        if !AppDelegate.isConnectedToNetwork(){
+            showAlert(title: "Error", message: "No hay conexión a internet")
+            return
+        }
         
         if ViewController.dbManager!.compararPassword(email: correoTf.text!, password: contraTf.text!, tabla: (tipo?.uppercased())!){
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -169,7 +173,7 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
             navigationControllerUsuarioVisitMe.loadViewIfNeeded()
             let dashboardController = navigationControllerUsuarioVisitMe.topViewController as! DashboardController
             dashboardController.loadViewIfNeeded()
-            
+            dashboardController.type = tipo?.uppercased()
             
             switch tipo!{
             case "Vigilante":
@@ -177,26 +181,40 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 dashboardController.usuario = vigilante
                 let condominio = AppDelegate.dbManager.cargarVigilanteCondominio(id: (vigilante?.id)!)
                dashboardController.condominio = condominio
-                dashboardController.cargarInformacion(email: correoTf.text!)
                 
             case "Residente":
-                let navigationController = tabViewController?.childViewControllers[1] as! UINavigationController
-                navigationController.loadViewIfNeeded()
+                let residentesNavigationController = tabViewController?.childViewControllers[1] as! UINavigationController
+                residentesNavigationController.loadViewIfNeeded()
                 let residente = ViewController.dbManager?.cargarResidente(email: correoTf.text!)
                 let condominio = AppDelegate.dbManager.cargarResidenteCondominio(id: (residente?.id)!)
-                let listaInvitadosController = navigationController.topViewController as! ListaVisitantesController
+                let listaInvitadosController = residentesNavigationController.topViewController as! ListaVisitantesController
+                listaInvitadosController.loadViewIfNeeded()
                 listaInvitadosController.residente = residente
                 dashboardController.usuario = residente
                 dashboardController.condominio = condominio
-                dashboardController.cargarInformacion(email: correoTf.text!)
                 listaInvitadosController.actualizarDatos()
-            case "Admnistrador":
-                print(".")
+            case "Administrador":
+                let admin = AppDelegate.dbManager.cargarAdmin(email: correoTf.text!)
+                let condominio = AppDelegate.dbManager.cargarAdminCondominio(adminId: (admin?.id)!)
+                let residentesNavigationController = tabViewController?.childViewControllers[3] as! UINavigationController
+                residentesNavigationController.loadViewIfNeeded()
+                let vigilantesNavigationController = tabViewController?.childViewControllers[2] as! UINavigationController
+                vigilantesNavigationController.loadViewIfNeeded()
+                let listaVigilantesController = vigilantesNavigationController.topViewController as! ListaVigilantesController
+                let listaResidentesController = residentesNavigationController.topViewController as! ListaResidentesController
+                listaVigilantesController.loadViewIfNeeded()
+                listaResidentesController.loadViewIfNeeded()
+                listaResidentesController.condominio = condominio
+                listaVigilantesController.condominio = condominio
+                listaResidentesController.admin = admin
+                listaVigilantesController.admin = admin
+                dashboardController.usuario = admin
+                dashboardController.condominio = condominio
+                listaVigilantesController.actualizarDatos()
+                listaResidentesController.actualizarDatos()
             default:
                 break
             }
-            
-            
             
             dashboardController.cargarInformacion(email: correoTf.text!)
             self.present(tabViewController!, animated: true, completion: nil)

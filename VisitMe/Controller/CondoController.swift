@@ -11,6 +11,7 @@ import UIKit
 class CondoController: UIViewController, UITextFieldDelegate{
     
     
+    @IBOutlet weak var botonGuardar: UIBarButtonItem!
     @IBOutlet weak var calle: UITextField!
     @IBOutlet weak var colonia: UITextField!
     @IBOutlet weak var numero: UITextField!

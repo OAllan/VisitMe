@@ -1,21 +1,21 @@
 //
-//  ListaVisitantesController.swift
+//  ListaResidentesController.swift
 //  VisitMe
 //
-//  Created by Oscar Allan Ruiz Toledo  on 15/11/17.
+//  Created by Oscar Allan Ruiz Toledo  on 20/11/17.
 //  Copyright © 2017 Oscar Allan Ruiz Toledo . All rights reserved.
 //
 
 import UIKit
 
-
-class ListaVisitantesController: UITableViewController
-{
-    var residente: Usuario?
-    var lista: [Invitacion]?
+class ListaResidentesController : UITableViewController {
+    
+    var lista: [Usuario]?
     var refresher: UIRefreshControl!
-    var pantallaInvitacion: InvitadoRegistradoController?
-
+    var condominio: Condominio?
+    var admin : Admin?
+    var pantallaRegistro: RegistroUsuarioController?
+    
     @IBOutlet weak var botonEditar: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -28,10 +28,9 @@ class ListaVisitantesController: UITableViewController
         self.tableView.addSubview(refresher)
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        pantallaInvitacion = storyBoard.instantiateViewController(withIdentifier: "registrado") as! InvitadoRegistradoController
+        pantallaRegistro = storyBoard.instantiateViewController(withIdentifier: "reg") as! RegistroUsuarioController
         
     }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,30 +40,32 @@ class ListaVisitantesController: UITableViewController
         return (lista?.count)!
     }
     
+    @IBAction func agregarResidente(_ sender: Any) {
+        
+        pantallaRegistro?.loadViewIfNeeded()
+        pantallaRegistro?.condominio = condominio
+        pantallaRegistro?.tipo = "RESIDENTE"
+        self.navigationController?.pushViewController(pantallaRegistro!, animated: true)
+    }
+    
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let invitacion = lista![indexPath.row]
-        let nombre = invitacion.getNombres()
-        let apellidos = "\(invitacion.getApellidoPaterno()) \(invitacion.getApellidoMaterno())"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellResidentes", for: indexPath)
+        let residente = lista![indexPath.row]
+        let nombre = residente.nombre
+        let apellidos = "\(residente.apellidoPaterno!) \(residente.apellidoMaterno!)"
         cell.textLabel!.text = nombre
         cell.detailTextLabel!.text = apellidos
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pantallaInvitacion?.loadViewIfNeeded()
-        pantallaInvitacion?.invitacion = lista?[indexPath.row]
-       pantallaInvitacion?.residente = true
-        pantallaInvitacion?.cargarInformacion()
-        
-        navigationController?.pushViewController(pantallaInvitacion!, animated: true)
-    }
+    @objc func actualizarDatos(){
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            showDeleteAlert(indexPath: indexPath)
-        }
+        lista = AppDelegate.dbManager.cargarResidentes(condoId: (condominio?.id)!)
+        self.tableView.reloadData()
+        self.refresher.endRefreshing()
     }
     
     @IBAction func editar(_ sender: Any) {
@@ -78,25 +79,19 @@ class ListaVisitantesController: UITableViewController
         }
     }
     
-    @objc func actualizarDatos(){
-        lista = AppDelegate.dbManager.cargarVisitantes(residenteId: (residente?.id)!)
-        self.tableView.reloadData()
-        self.refresher.endRefreshing()
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destino = segue.destination as! InvitadoController
-        destino.usuario = self.residente
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showDeleteAlert(indexPath: indexPath)
+        }
     }
     
     func showDeleteAlert(indexPath: IndexPath){
-        let alert = UIAlertController(title: "Confirmar", message: "¿Estás segur@ que deseas eliminar esta invitación?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirmar", message: "¿Estás segur@ que deseas eliminar al residente?", preferredStyle: .alert)
         
         
         let eliminar  = UIAlertAction(title: "Eliminar", style: .default, handler: { (action) -> Void in
-            let invitacion = self.lista?.remove(at: indexPath.row)
-            AppDelegate.dbManager.borrarInvitacion(codigoSeleccionado: (invitacion?.folio)!)
+            let residente = self.lista?.remove(at: indexPath.row)
+            AppDelegate.dbManager.borrarResidente(idSeleccionada: (residente?.id)!)
             self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         })
         

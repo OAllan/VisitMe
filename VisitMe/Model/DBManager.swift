@@ -14,7 +14,7 @@ class DBManager{
     var context: OHMySQLQueryContext?
     
     func conectar(){
-        let client = OHMySQLUser(userName: "sql3204932", password: "nIE6elrb66", serverName: "sql3.freemysqlhosting.net", dbName: "sql3204932", port: 3306, socket: nil)
+        let client = OHMySQLUser(userName: "visitmeadmin", password: "Itesm2017", serverName: "visitme.cnqtyhpnqyxr.us-east-2.rds.amazonaws.com", dbName: "VisitMe", port: 3306, socket: nil)
         let coordinator = OHMySQLStoreCoordinator(user: client!)
         coordinator.encoding = .UTF8MB4
         coordinator.connect()
@@ -38,6 +38,24 @@ class DBManager{
     func registrarResidente(nombre: String, apellidoPaterno: String, apellidoMaterno: String, password: String, email: String){
         self.registrarUsuario(tabla: "RESIDENTE", nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, password: password, email: email)
         
+    }
+    
+    func registrarResidenteCondominio(condoId: String, email: String){
+        var query = OHMySQLQueryRequestFactory.select("RESIDENTE", condition: "EMAIL= '\(email)'")
+        let responseQuery = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        let response = responseQuery[0]
+        let residenteId = "\(response["ID"] as! NSNumber)"
+        query = OHMySQLQueryRequestFactory.insert("CONDOMINIO_USUARIO", set: ["CONDOMINIO": condoId, "USUARIO": residenteId])
+        try? context?.execute(query)
+    }
+    
+    func registrarVigilanteCondominio(condoId: String, email: String){
+        var query = OHMySQLQueryRequestFactory.select("VIGILANTE", condition: "EMAIL= '\(email)'")
+        let responseQuery = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        let response = responseQuery[0]
+        let vigilanteId = "\(response["ID"] as! NSNumber)"
+        query = OHMySQLQueryRequestFactory.insert("CONDOMINIO_VIGILANTE", set: ["CONDOMINIO": condoId, "VIGILANTE": vigilanteId])
+        try? context?.execute(query)
     }
     
     
@@ -75,10 +93,14 @@ class DBManager{
     }
     
     func borrarResidente(idSeleccionada: String){
+        let query = OHMySQLQueryRequestFactory.delete("CONDOMINIO_USUARIO", condition: "USUARIO= \(idSeleccionada)")
+        try? context?.execute(query)
         self.borrarRegistro(tabla: "RESIDENTE", ID: idSeleccionada)
     }
     
     func borrarVigilante(idSeleccionada: String){
+        let query = OHMySQLQueryRequestFactory.delete("CONDOMINIO_VIGILANTE", condition: "VIGILANTE= \(idSeleccionada)")
+        try? context?.execute(query)
         self.borrarRegistro(tabla: "VIGILANTE", ID: idSeleccionada)
     }
     
@@ -126,6 +148,16 @@ class DBManager{
     
     func cargarResidente(email: String) -> Usuario? {
         let query = OHMySQLQueryRequestFactory.select("RESIDENTE", condition: "EMAIL= '\(email)'")
+        let responseQuery = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if responseQuery.count <= 0{
+            return nil
+        }
+        let response = responseQuery[0]
+        return Usuario(id: "\(response["ID"] as! NSNumber)", nombre: response["NOMBRE"] as! String, apellidoPaterno: response["APELLIDO_PATERNO"] as! String, apellidoMaterno: response["APELLIDO_MATERNO"] as! String, email: response["EMAIL"] as! String)
+    }
+    
+    func cargarResidente(id: String) -> Usuario? {
+        let query = OHMySQLQueryRequestFactory.select("RESIDENTE", condition: "ID= \(id)")
         let responseQuery = (try? context?.executeQueryRequestAndFetchResult(query))!!
         if responseQuery.count <= 0{
             return nil
@@ -204,15 +236,29 @@ class DBManager{
         return cargarCondominio(id: "\(response["CONDOMINIO"] as! NSNumber)")!
     }
     
+    func cargarAdminCondominio(adminId: String) -> Condominio{
+        let query = OHMySQLQueryRequestFactory.select("CONDOMINIO", condition: "ADMIN= \(adminId)")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!![0]
+        return cargarCondominio(id: "\(response["ID"] as! NSNumber)")!
+    }
+    
     func cargarVisitantes(residenteId: String) -> [Invitacion]?{
         let query = OHMySQLQueryRequestFactory.select("INVITACION", condition: "USUARIO= \(residenteId)")
         let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
         if response.count <= 0{
-            return nil
+            return []
         }
         return self.toArrayVisitantes(dict: response)
     }
     
+    func cargarResidentes(condoId: String) -> [Usuario]? {
+        let query = OHMySQLQueryRequestFactory.select("CONDOMINIO_USUARIO", condition: "CONDOMINIO= \(condoId)")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if response.count <= 0{
+            return []
+        }
+        return self.toArrayResidentes(dict: response)
+    }
     
     func existeCorreo(tabla: String, correo: String) -> Bool{
         let query = OHMySQLQueryRequestFactory.select(tabla, condition: "EMAIL= '\(correo)'")
@@ -221,6 +267,44 @@ class DBManager{
             return false
         }
         return true
+    }
+    
+    func toArrayResidentes(dict: [[String: Any?]]) ->[Usuario]?{
+        var residentes: [Usuario] = []
+        for data in dict {
+            let residente = cargarResidente(id: "\(data["USUARIO"] as! NSNumber)")
+            residentes.append(residente!)
+        }
+        
+        return residentes
+    }
+    
+    func cargarVigilante(id: String) -> Vigilante? {
+        let query = OHMySQLQueryRequestFactory.select("VIGILANTE", condition: "ID= \(id)")
+        let responseQuery = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if responseQuery.count <= 0{
+            return nil
+        }
+        let response = responseQuery[0]
+        return Vigilante(id: "\(response["ID"] as! NSNumber)", nombre: response["NOMBRE"] as! String, apellidoPaterno: response["APELLIDO_PATERNO"] as! String, apellidoMaterno: response["APELLIDO_MATERNO"] as! String, email: response["EMAIL"] as! String)
+    }
+    
+    func cargarVigilantes(condoId: String) -> [Vigilante]? {
+        let query = OHMySQLQueryRequestFactory.select("CONDOMINIO_VIGILANTE", condition: "CONDOMINIO= \(condoId)")
+        let response = (try? context?.executeQueryRequestAndFetchResult(query))!!
+        if response.count <= 0{
+            return []
+        }
+        return self.toArrayVigilantes(dict: response)
+    }
+    
+    func toArrayVigilantes(dict: [[String: Any?]]) ->[Vigilante]?{
+        var vigilantes: [Vigilante] = []
+        for data in dict {
+            let vigilante = cargarVigilante(id: "\(data["VIGILANTE"] as! NSNumber)")
+            vigilantes.append(vigilante!)
+        }
+        return vigilantes
     }
     
     func toArrayVisitantes(dict: [[String:Any?]]) ->[Invitacion]?{
