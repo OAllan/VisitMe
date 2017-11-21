@@ -198,9 +198,9 @@ class InicioSesionController: UIViewController, UIPickerViewDelegate, UIPickerVi
             case "Administrador":
                 let admin = AppDelegate.dbManager.cargarAdmin(email: correoTf.text!)
                 let condominio = AppDelegate.dbManager.cargarAdminCondominio(adminId: (admin?.id)!)
-                let residentesNavigationController = tabViewController?.childViewControllers[3] as! UINavigationController
+                let residentesNavigationController = tabViewController?.childViewControllers[2] as! UINavigationController
                 residentesNavigationController.loadViewIfNeeded()
-                let vigilantesNavigationController = tabViewController?.childViewControllers[2] as! UINavigationController
+                let vigilantesNavigationController = tabViewController?.childViewControllers[1] as! UINavigationController
                 vigilantesNavigationController.loadViewIfNeeded()
                 let listaVigilantesController = vigilantesNavigationController.topViewController as! ListaVigilantesController
                 let listaResidentesController = residentesNavigationController.topViewController as! ListaResidentesController
